@@ -16,7 +16,7 @@
 
 ---
 
-<p align="center"> A GitHub notification reciever from Whatsapp ( Telegram, etc )
+<p align="center"> A GitHub notification receiver from Whatsapp ( Telegram, etc )
     <br> 
 </p>
 
