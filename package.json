@@ -6,7 +6,7 @@
     "scripts": {
         "start": "tsc && node dist/main.js",
         "devStart": "nodemon src/main.ts",
-        "build": "tsc",
+        "build": "tsc && yarn install --prod",
         "test": "jest --coverage",
         "test:watch": "jest --watch",
         "format-code": "npx prettier --write .",
