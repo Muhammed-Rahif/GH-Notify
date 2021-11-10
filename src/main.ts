@@ -1,8 +1,9 @@
 import express, { Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
 import basicMiddlwares from "./middlewares";
-import ErrorResponse from "./utils/ErrorResponse";
 import errorHandler from "./middlewares/errorHandler";
+import path from "path";
+import apiRouter from "./routers/api";
 
 dotenv.config({ path: "src/config/.env" });
 const app = express();
@@ -10,8 +11,11 @@ const PORT = process.env.PUBLIC_URL || 3001;
 
 app.use(basicMiddlwares);
 
-app.use((req: Request, res: Response, next: NextFunction) => {
-    next(new ErrorResponse(404, "Not found"));
+app.use("/v1/api", apiRouter);
+
+app.use(express.static(path.join(__dirname, "view")));
+app.get("/*", function (req: Request, res: Response) {
+    res.sendFile(path.join(__dirname, "view", "index.html"));
 });
 
 app.use(errorHandler);
