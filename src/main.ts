@@ -11,7 +11,7 @@ const PORT = process.env.PUBLIC_URL || 3001;
 
 app.use(basicMiddlwares);
 
-app.use("/v1/api", apiRouter);
+app.use("/api/v1", apiRouter);
 
 app.use(express.static(path.join(__dirname, "view")));
 app.get("/*", function (req: Request, res: Response) {
