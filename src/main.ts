@@ -4,7 +4,6 @@ import basicMiddlwares from "./middlewares";
 import errorHandler from "./middlewares/errorHandler";
 import path from "path";
 import apiRouter from "./routers/api";
-import { getStarGazers } from "./helpers";
 
 dotenv.config({ path: "src/config/.env" });
 const app = express();
