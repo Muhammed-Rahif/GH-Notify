@@ -17,4 +17,12 @@ const getStarGazers = (): Promise<null | Array<string | undefined>> =>
             .catch(reject);
     });
 
-export { getStarGazers };
+const checkIfStargazer = (user: string): Promise<boolean | undefined> =>
+    new Promise((resolve, reject) => {
+        user = user.trim();
+        getStarGazers()
+            .then(starGazers => resolve(starGazers?.includes(user)))
+            .catch(reject);
+    });
+
+export { getStarGazers, checkIfStargazer };
