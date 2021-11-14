@@ -9,8 +9,6 @@ export default (
 ) => {
     const { statusCode = 500, message = "Internal Server Error" } = err;
 
-    console.error(err);
-
     // sending error response
     res.status(statusCode).json({
         success: false,
