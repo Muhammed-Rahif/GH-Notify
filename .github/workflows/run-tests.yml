@@ -8,12 +8,11 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 16.13.0
-    - run: yarn install 
-    - run: pwd    
-    - run: yarn jest --coverage
+    - run: yarn build 
+    - run: yarn test
     - uses: mattallty/jest-github-action@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        test-command: "yarn test"
+        # test-command: "yarn test"
         
