@@ -4,10 +4,14 @@ import basicMiddlwares from "./middlewares";
 import errorHandler from "./middlewares/errorHandler";
 import path from "path";
 import apiRouter from "./routers/api";
+import { connectDatabase } from "./config/db";
 
 dotenv.config({ path: "src/config/.env" });
 const app = express();
-const PORT = process.env.PUBLIC_URL || 3001;
+const PORT = process.env.PUBLIC_URL || 5000;
+
+// Connect to DB
+connectDatabase();
 
 app.use(basicMiddlwares);
 
