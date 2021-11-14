@@ -24,6 +24,9 @@ app.get("/*", function (req: Request, res: Response) {
 
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-    console.log(`Server started listening on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== "test")
+    app.listen(PORT, () => {
+        console.log(`Server started listening on port ${PORT}`);
+    });
+
+export default app;
