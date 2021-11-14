@@ -1,7 +1,7 @@
 name: Run jest tests
 on: [push, pull_request, workflow_dispatch]
 jobs:
-  build:
+  run-tests:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
