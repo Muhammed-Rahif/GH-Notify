@@ -32,7 +32,10 @@ async function register(
             ...regForm,
             lastReceivedOn: Date.now(),
         });
-        res.json({ success: true, message: "Registration successful!" });
+        res.status(201).json({
+            success: true,
+            message: "Registration successful!",
+        });
     } catch (err) {
         return next(err);
     }

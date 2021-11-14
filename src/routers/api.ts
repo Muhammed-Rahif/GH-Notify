@@ -15,4 +15,8 @@ router.get("/stars", (req: Request, res: Response): void => {
 
 router.post("/register", validateRegistrationForm, validationResults, register);
 
+router.get("/", (req: Request, res: Response) =>
+    res.json({ success: true, message: "Everything works fine!" })
+);
+
 export default router;
