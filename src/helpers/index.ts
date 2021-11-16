@@ -1,5 +1,6 @@
 import { Octokit } from "@octokit/rest";
-import UserModel from "../models/user";
+import { RecursivePartial } from "../types";
+import NotificationType from "../types/notifications";
 
 const gh = new Octokit();
 
@@ -26,11 +27,13 @@ const checkIfStargazer = (user: string): Promise<boolean | undefined> =>
             .catch(reject);
     });
 
-const sortNotifications = (notifications: Array<UserModelType>) => {
+const sortNotifications = (
+    notifications: RecursivePartial<Array<NotificationType>>
+) => {
     return notifications.sort(
         (a, b) =>
-            new Date(b.lastReceivedOn).valueOf() -
-            new Date(a.lastReceivedOn).valueOf()
+            new Date(a?.updated_at as string).valueOf() -
+            new Date(b?.updated_at as string).valueOf()
     );
 };
 
