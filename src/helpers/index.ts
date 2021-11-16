@@ -1,4 +1,5 @@
 import { Octokit } from "@octokit/rest";
+import UserModel from "../models/user";
 
 const gh = new Octokit();
 
@@ -25,4 +26,12 @@ const checkIfStargazer = (user: string): Promise<boolean | undefined> =>
             .catch(reject);
     });
 
-export { getStarGazers, checkIfStargazer };
+const sortNotifications = (notifications: Array<UserModelType>) => {
+    return notifications.sort(
+        (a, b) =>
+            new Date(b.lastReceivedOn).valueOf() -
+            new Date(a.lastReceivedOn).valueOf()
+    );
+};
+
+export { getStarGazers, checkIfStargazer, sortNotifications };
