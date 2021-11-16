@@ -1,6 +1,8 @@
 import { Octokit } from "@octokit/rest";
 import { RecursivePartial } from "../types";
 import NotificationType from "../types/notifications";
+import UserModel from "../models/user";
+import { UserModelType } from "../types/user";
 
 const gh = new Octokit();
 
@@ -37,4 +39,36 @@ const sortNotifications = (
     );
 };
 
-export { getStarGazers, checkIfStargazer, sortNotifications };
+const getNewNotificationsForUser = (validUser: UserModelType): Promise<any> =>
+    new Promise(async (resolve, reject) => {
+        let userNotifications: Array<NotificationType>;
+
+        const gh = new Octokit({ auth: validUser.personalAccessToken });
+
+        // Getting all notifications for a user
+        try {
+            userNotifications = (
+                await gh.activity.listNotificationsForAuthenticatedUser()
+            ).data;
+        } catch (err) {
+            throw err;
+        }
+
+        // filtering new notifications for a user ( Already sended notifications will be removed )
+        let userNewNotifications = userNotifications.filter(notification => {
+            if (new Date(notification.updated_at) > validUser.lastReceivedOn)
+                return notification;
+            else
+                console.log(
+                    `${validUser.username} don't have any new notifications!`
+                );
+        });
+        resolve(userNewNotifications);
+    });
+
+export {
+    getStarGazers,
+    checkIfStargazer,
+    sortNotifications,
+    getNewNotificationsForUser,
+};
