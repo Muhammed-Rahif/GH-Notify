@@ -13,7 +13,6 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 [![GitHub Super-Linter](https://github.com/Muhammed-Rahif/GH-Notify/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/Muhammed-Rahif/GH-Notify/actions/)
 
-
 </div>
 
 ---
