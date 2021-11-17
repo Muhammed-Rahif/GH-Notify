@@ -5,12 +5,13 @@ interface UserModelType {
     personalAccessToken: string;
     lastReceivedOn: Date;
     joined: Date;
+    userId: number;
 }
 
-interface UserNotifications {
+interface UserNotification {
     username: string;
     personalAccessToken: string;
     notifications: Array<NotificationType>;
 }
 
-export { UserModelType, UserNotifications };
+export { UserModelType, UserNotification };

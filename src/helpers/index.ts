@@ -39,7 +39,9 @@ const sortNotifications = (
     );
 };
 
-const getNewNotificationsForUser = (validUser: UserModelType): Promise<any> =>
+const getNewNotificationsForUser = (
+    validUser: UserModelType
+): Promise<Array<NotificationType>> =>
     new Promise(async (resolve, reject) => {
         let userNotifications: Array<NotificationType>;
 
@@ -66,9 +68,23 @@ const getNewNotificationsForUser = (validUser: UserModelType): Promise<any> =>
         resolve(userNewNotifications);
     });
 
+const getAllUsers = () =>
+    new Promise((resolve, reject) => {
+        UserModel.find().then(resolve).catch(reject);
+    });
+
+const updateUser = (username: string, data: RecursivePartial<UserModelType>) =>
+    new Promise((resolve, reject) => {
+        UserModel.findOneAndUpdate({ username }, { ...data })
+            .then(resolve)
+            .catch(reject);
+    });
+
 export {
     getStarGazers,
     checkIfStargazer,
     sortNotifications,
     getNewNotificationsForUser,
+    getAllUsers,
+    updateUser,
 };
