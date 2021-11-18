@@ -1,6 +1,6 @@
 import { sortNotifications } from "../src/helpers/index";
-import { RecursivePartial } from "./types";
-import NotificationType from "./types/notifications";
+import { RecursivePartial } from "../src/types";
+import NotificationType from "../src/types/notifications";
 
 describe("sort notifications", () => {
     const notifications: RecursivePartial<Array<NotificationType>> = [
