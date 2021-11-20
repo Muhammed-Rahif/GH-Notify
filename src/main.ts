@@ -35,9 +35,8 @@ app.use(express.static(path.join(__dirname, "view")));
 
 app.use(errorHandler);
 
-if (process.env.NODE_ENV !== "test")
-    app.listen(PORT, () => {
-        console.log(`Server started listening on port ${PORT}`);
-    });
+app.listen(PORT, () => {
+    console.log(`Server started listening on port ${PORT}`);
+});
 
 export default app;
