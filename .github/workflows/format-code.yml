@@ -9,7 +9,5 @@ jobs:
         steps:
             - name: Checkout to branch
               uses: actions/checkout@v2
-            - name: Check if code files formatted
-              run: yarn check-format
             - name: Format code
-              run: if [ $? -eq 0 ]; then echo OK; else echo FAIL; fi
+              run: yarn check-format || echo FAIL
