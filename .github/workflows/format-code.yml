@@ -1,0 +1,14 @@
+name: Format code
+on: [push, pull_request]
+
+jobs:
+    format-code:
+        name: Format code
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout to branch
+              uses: actions/checkout@v2
+            - name: Check if code files formatted
+              run: yarn check-format
+            - name: Format code
+              run: if [ $? -eq 0 ]; then echo OK; else echo FAIL; fi
