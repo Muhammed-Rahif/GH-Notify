@@ -13,8 +13,9 @@ jobs:
             - name: Checkout to branch
               uses: actions/checkout@v2
             - name: Format code
+              id: check
               run: yarn check-format
               continue-on-error: true
             - name: Echo
-              if: failure()
+              if: steps.check.outcome == 'success'
               run: echo SUCCESS; exit 0;
