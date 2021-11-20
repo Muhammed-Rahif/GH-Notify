@@ -1,5 +1,7 @@
 name: Format code
-on: [push, pull_request]
+on: push:
+    branches:
+      - main
 
 jobs:
     format-code:
@@ -10,4 +12,6 @@ jobs:
             - name: Checkout to branch
               uses: actions/checkout@v2
             - name: Format code
-              run: yarn check-format || echo FAIL
+              run: yarn check-format
+            - name: Echo
+              run: echo SUCCESS
