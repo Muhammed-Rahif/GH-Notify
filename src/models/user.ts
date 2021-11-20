@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
     personalAccessToken: { type: String, required: true, unique: true },
     lastReceivedOn: { type: Date, required: true },
     joined: { type: Date, default: Date.now(), required: true },
+    userId: { type: Number, required: true },
 });
 
 export default mongoose.model("User", userSchema, "users");

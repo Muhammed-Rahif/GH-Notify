@@ -19,6 +19,11 @@ const validateRegistrationForm = checkSchema({
             errorMessage: "Github personal access token must be 8-68 long.",
         },
     },
+    token: {
+        isJWT: {
+            errorMessage: "Make sure your token isn't broken.",
+        },
+    },
 });
 
 export default validateRegistrationForm;

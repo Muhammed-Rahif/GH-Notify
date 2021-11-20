@@ -4,7 +4,7 @@ import NotificationType from "../types/notifications";
 import UserModel from "../models/user";
 import { UserModelType } from "../types/user";
 
-const gh = new Octokit();
+const gh = new Octokit({ auth: process.env.GH_AUTH_TOKEN });
 
 const getStarGazers = (): Promise<null | Array<string | undefined>> =>
     new Promise((resolve, reject) => {
@@ -39,9 +39,11 @@ const sortNotifications = (
     );
 };
 
-const getNewNotificationsForUser = (validUser: UserModelType): Promise<any> =>
+const getNewNotificationsForUser = (
+    validUser: UserModelType
+): Promise<Array<NotificationType>> =>
     new Promise(async (resolve, reject) => {
-        let userNotifications: Array<NotificationType>;
+        let userNotifications: Array<NotificationType> = [];
 
         const gh = new Octokit({ auth: validUser.personalAccessToken });
 
@@ -54,16 +56,34 @@ const getNewNotificationsForUser = (validUser: UserModelType): Promise<any> =>
             throw err;
         }
 
+        if (userNotifications.length === 0)
+            console.log(
+                `${validUser.username} don't have any new notifications on github!`
+            );
+
         // filtering new notifications for a user ( Already sended notifications will be removed )
         let userNewNotifications = userNotifications.filter(notification => {
             if (new Date(notification.updated_at) > validUser.lastReceivedOn)
                 return notification;
             else
                 console.log(
-                    `${validUser.username} don't have any new notifications!`
+                    `${validUser.username} don't have any new notifications on telegram!`
                 );
         });
         resolve(userNewNotifications);
+    });
+
+const getAllUsers = (usernames?: Array<string>) =>
+    new Promise((resolve, reject) => {
+        let query = usernames ? { username: { $in: usernames } } : {};
+        UserModel.find(query).then(resolve).catch(reject);
+    });
+
+const updateUser = (username: string, data: RecursivePartial<UserModelType>) =>
+    new Promise((resolve, reject) => {
+        UserModel.findOneAndUpdate({ username }, { ...data })
+            .then(resolve)
+            .catch(reject);
     });
 
 export {
@@ -71,4 +91,6 @@ export {
     checkIfStargazer,
     sortNotifications,
     getNewNotificationsForUser,
+    getAllUsers,
+    updateUser,
 };
