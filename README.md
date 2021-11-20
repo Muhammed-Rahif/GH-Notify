@@ -71,13 +71,13 @@ Go to http://localhost:3001 to view the output.
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
-To run the tests :-
+<!-- To run the tests :-
 
 ```
 yarn test
-```
+``` -->
 
-### And coding style tests
+### Coding style tests
 
 -   To check any files need to be formatted
 
