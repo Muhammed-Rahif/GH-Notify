@@ -12,9 +12,22 @@ jobs:
         steps:
             - name: Checkout to branch
               uses: actions/checkout@v2
+
             - name: Format code
+              id: check
               run: yarn check-format
               continue-on-error: true
-            - name: Echo
-              if: failure()
-              run: echo SUCCESS; exit 0;
+
+            - name: Format code
+              if: steps.check.outcome != 'success'
+              id: cpr
+              uses: peter-evans/create-pull-request@v3
+              with:
+                  commit-message: "Prettified Code!"
+                  branch: format-code
+                  delete-branch: true
+                  title: "Code Prettified"
+                  body: "Code files formatted using prettier"
+                  labels: code-format
+                  reviewers: Muhammed-Rahif
+                  milestone: 1
