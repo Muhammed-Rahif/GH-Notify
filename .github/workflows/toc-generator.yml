@@ -1,5 +1,5 @@
 name: Table of content
-on: [pull_request, push]
+on: push
 
 jobs:
     generateTOC:
