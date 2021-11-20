@@ -17,7 +17,7 @@
 
 ---
 
-<p align="center"> A GitHub notification receiver from Telegram ( Whatsapp, etc )
+<p align="center"> A GitHub notification receiver from Telegram.
     <br> 
 </p>
 
@@ -38,7 +38,7 @@
 
 ## 🧐 About
 
-A github notification sending server, on whatsapp.
+A github notification sending server, on telegram.
 
 ## 🏁 Getting Started
 
