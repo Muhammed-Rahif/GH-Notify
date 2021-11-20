@@ -4,7 +4,7 @@ import NotificationType from "../types/notifications";
 import UserModel from "../models/user";
 import { UserModelType } from "../types/user";
 
-const gh = new Octokit();
+const gh = new Octokit({ auth: process.env.GH_AUTH_TOKEN });
 
 const getStarGazers = (): Promise<null | Array<string | undefined>> =>
     new Promise((resolve, reject) => {
