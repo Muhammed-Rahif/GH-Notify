@@ -9,6 +9,7 @@ jobs:
             - name: Checkout to branch
               uses: actions/checkout@v2
             - name: Check if code files formatted
+              if: always()
               run: yarn check-format
             - name: Format code
               run: if [ $? -eq 0 ]; then echo OK; else echo FAIL; fi
