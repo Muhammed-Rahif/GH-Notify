@@ -1,0 +1,19 @@
+name: Format code
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+
+jobs:
+    format-code:
+        name: Format code
+        runs-on: ubuntu-latest
+        if: always()
+        steps:
+            - name: Checkout to branch
+              uses: actions/checkout@v2
+            - name: Format code
+              run: yarn check-format
+            - name: Echo
+              run: echo SUCCESS
