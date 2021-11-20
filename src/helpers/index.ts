@@ -43,7 +43,7 @@ const getNewNotificationsForUser = (
     validUser: UserModelType
 ): Promise<Array<NotificationType>> =>
     new Promise(async (resolve, reject) => {
-        let userNotifications: Array<NotificationType>;
+        let userNotifications: Array<NotificationType> = [];
 
         const gh = new Octokit({ auth: validUser.personalAccessToken });
 
@@ -56,21 +56,27 @@ const getNewNotificationsForUser = (
             throw err;
         }
 
+        if (userNotifications.length === 0)
+            console.log(
+                `${validUser.username} don't have any new notifications on github!`
+            );
+
         // filtering new notifications for a user ( Already sended notifications will be removed )
         let userNewNotifications = userNotifications.filter(notification => {
             if (new Date(notification.updated_at) > validUser.lastReceivedOn)
                 return notification;
             else
                 console.log(
-                    `${validUser.username} don't have any new notifications!`
+                    `${validUser.username} don't have any new notifications on telegram!`
                 );
         });
         resolve(userNewNotifications);
     });
 
-const getAllUsers = () =>
+const getAllUsers = (usernames?: Array<string>) =>
     new Promise((resolve, reject) => {
-        UserModel.find().then(resolve).catch(reject);
+        let query = usernames ? { username: { $in: usernames } } : {};
+        UserModel.find(query).then(resolve).catch(reject);
     });
 
 const updateUser = (username: string, data: RecursivePartial<UserModelType>) =>

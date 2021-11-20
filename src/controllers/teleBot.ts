@@ -4,6 +4,7 @@ import {
     checkIfStargazer,
     getAllUsers,
     getNewNotificationsForUser,
+    getStarGazers,
     updateUser,
 } from "../helpers";
 import { UserModelType } from "../types/user";
@@ -54,32 +55,22 @@ const setupRegistration = (bot: Telegraf<Context<Update>>) =>
 
 const sendAllNewNotifications = (bot: Telegraf<Context<Update>>) =>
     new Promise(async (resolve, reject) => {
-        let allUsers: Array<UserModelType> = [];
         let validUsers: Array<UserModelType> = [];
 
         // Getting all users list from db
         try {
-            allUsers = (await getAllUsers()) as Array<UserModelType>;
+            let stargazers = await getStarGazers();
+            validUsers = (await getAllUsers(
+                stargazers as Array<string>
+            )) as Array<UserModelType>;
         } catch (err) {
             reject(err);
         }
 
-        // Filtering valid users
-        validUsers = allUsers.filter(async user => {
-            let isValidUser: boolean = false;
-            try {
-                isValidUser = (await checkIfStargazer(
-                    user.username
-                )) as boolean;
-            } catch (err) {
-                reject(err);
-            }
-            return isValidUser;
-        });
-
         // Getting valid users notifications and sending to them
         validUsers.map(async user => {
             let userNotifications: Array<NotificationType> = [];
+
             try {
                 userNotifications = (await getNewNotificationsForUser(
                     user
@@ -114,7 +105,19 @@ const sendAllNewNotifications = (bot: Telegraf<Context<Update>>) =>
                         user.username,
                         details.html_url
                     ).catch(reject);
-                }
+                } // Send notification for a specific user
+                else
+                    sendNotificationForUser(
+                        bot,
+                        user.userId,
+                        Templates.notification(
+                            notification.subject.title,
+                            notification.subject.type,
+                            notification.reason
+                        ),
+                        notification.updated_at,
+                        user.username
+                    ).catch(reject);
             });
         });
     });
