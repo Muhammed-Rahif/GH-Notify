@@ -23,8 +23,20 @@
 
 ## 📝 Table of Contents
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## 📝 Table of Contents
+
+- [🧐 About <a name = "about"></a>](#-about-a-name--abouta)
+- [🏁 Getting Started <a name = "getting_started"></a>](#-getting-started-a-name--getting_starteda)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+- [🔧 Running the tests <a name = "tests"></a>](#-running-the-tests-a-name--testsa)
+  - [Coding style tests](#coding-style-tests)
+- [⛏️ Built Using <a name = "built_using"></a>](#-built-using-a-name--built_usinga)
+- [✍️ Authors <a name = "authors"></a>](#-authors-a-name--authorsa)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 -   [About](#about)
 -   [Getting Started](#getting_started)
