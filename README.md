@@ -23,6 +23,9 @@
 
 ## 📝 Table of Contents
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 -   [About](#about)
 -   [Getting Started](#getting_started)
 -   [Built Using](#built_using)

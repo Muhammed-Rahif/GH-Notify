@@ -1,0 +1,16 @@
+name: Table of content
+on: [pull_request, push]
+
+jobs:
+    generateTOC:
+        name: Generate table of contents
+        runs-on: ubuntu-latest
+        steps:
+            - uses: technote-space/toc-generator@v4
+              with:
+                  GITHUB_TOKEN: ${{github.token}}
+                  TARGET_PATHS: README*.md
+                  TOC_TITLE: 📝 Table of Contents
+                  CREATE_PR: true
+                  COMMIT_MESSAGE: Docs: Updated table of contents in `README.md`
+                  PR_TITLE: Updated table of contents in `README.md`
