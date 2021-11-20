@@ -25,16 +25,17 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## 📝 Table of Contents
 
-- [🧐 About <a name = "about"></a>](#-about-a-name--abouta)
-- [🏁 Getting Started <a name = "getting_started"></a>](#-getting-started-a-name--getting_starteda)
-  - [Prerequisites](#prerequisites)
-  - [Installing](#installing)
-- [🔧 Running the tests <a name = "tests"></a>](#-running-the-tests-a-name--testsa)
-  - [Coding style tests](#coding-style-tests)
-- [⛏️ Built Using <a name = "built_using"></a>](#-built-using-a-name--built_usinga)
-- [✍️ Authors <a name = "authors"></a>](#-authors-a-name--authorsa)
+-   [🧐 About <a name = "about"></a>](#-about-a-name--abouta)
+-   [🏁 Getting Started <a name = "getting_started"></a>](#-getting-started-a-name--getting_starteda)
+    -   [Prerequisites](#prerequisites)
+    -   [Installing](#installing)
+-   [🔧 Running the tests <a name = "tests"></a>](#-running-the-tests-a-name--testsa)
+    -   [Coding style tests](#coding-style-tests)
+-   [⛏️ Built Using <a name = "built_using"></a>](#-built-using-a-name--built_usinga)
+-   [✍️ Authors <a name = "authors"></a>](#-authors-a-name--authorsa)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -45,11 +46,11 @@
 -   [Contributing](../CONTRIBUTING.md)
 -   [Authors](#authors)
 
-## 🧐 About <a name = "about"></a>
+## 🧐 About
 
 A github notification sending server, on whatsapp.
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+## 🏁 Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
@@ -84,7 +85,7 @@ And start the local server
 
 Go to http://localhost:3001 to view the output.
 
-## 🔧 Running the tests <a name = "tests"></a>
+## 🔧 Running the tests
 
 <!-- To run the tests :-
 
@@ -106,14 +107,14 @@ yarn check-format
 yarn code-format
 ```
 
-## ⛏️ Built Using <a name = "built_using"></a>
+## ⛏️ Built Using
 
 -   [MongoDB](https://www.mongodb.com/) - Cross-platform document-oriented database program
 -   [Express](https://expressjs.com/) - Web framework for Node.js
 -   [ReactJs](https://reactjs.org/) - A JavaScript library for building user interfaces
 -   [NodeJs](https://nodejs.org/en/) - Node.js® is a JavaScript runtime
 
-## ✍️ Authors <a name = "authors"></a>
+## ✍️ Authors
 
 -   [@Muhammed-Rahif](https://github.com/Muhammed-Rahif) - Idea & The whole job so far
 
