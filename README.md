@@ -12,7 +12,7 @@
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/Muhammed-Rahif/GH-Notify.svg)](https://github.com/Muhammed-Rahif/GH-Notify/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 [![GitHub Super-Linter](https://github.com/Muhammed-Rahif/GH-Notify/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/Muhammed-Rahif/GH-Notify/actions/)
-  [![Format code](https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml/badge.svg)](https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml)
+[![Format code](https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml/badge.svg)](https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml)
 
 </div>
 
@@ -24,16 +24,17 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## 📝 Table of Contents
 
-- [🧐 About](#-about)
-- [🏁 Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installing](#installing)
-- [🔧 Running the tests](#-running-the-tests)
-  - [Coding style tests](#coding-style-tests)
-- [⛏️ Built Using](#-built-using)
-- [✍️ Authors](#-authors)
+-   [🧐 About](#-about)
+-   [🏁 Getting Started](#-getting-started)
+    -   [Prerequisites](#prerequisites)
+    -   [Installing](#installing)
+-   [🔧 Running the tests](#-running-the-tests)
+    -   [Coding style tests](#coding-style-tests)
+-   [⛏️ Built Using](#-built-using)
+-   [✍️ Authors](#-authors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
