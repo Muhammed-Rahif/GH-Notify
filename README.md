@@ -7,11 +7,21 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/status-active-success.svg" alt="Status">
-  <img src="https://img.shields.io/github/issues/Muhammed-Rahif/GH-Notify.svg" alt="GitHub Issues">
-  <img src="https://img.shields.io/github/issues-pr/Muhammed-Rahif/GH-Notify.svg" alt="GitHub Pull Requests">
-  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
-  <img src="https://github.com/Muhammed-Rahif/GH-Notify/workflows/Lint%20Code%20Base/badge.svg" alt="GitHub Super-Linter">
-  <img src="https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml/badge.svg" alt="Format code">
+  <a href="https://github.com/Muhammed-Rahif/GH-Notify/issues">
+    <img src="https://img.shields.io/github/issues/Muhammed-Rahif/GH-Notify.svg" alt="GitHub Issues">
+  </a>
+  <a href="https://github.com/Muhammed-Rahif/GH-Notify/pulls">
+    <img src="https://img.shields.io/github/issues-pr/Muhammed-Rahif/GH-Notify.svg" alt="GitHub Pull Requests">
+  </a>
+  <a href="/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+  </a>
+  <a href="https://github.com/Muhammed-Rahif/GH-Notify/actions/">
+    <img src="https://github.com/Muhammed-Rahif/GH-Notify/workflows/Lint%20Code%20Base/badge.svg" alt="GitHub Super-Linter">
+  </a>
+  <a href="https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml">
+    <img src="https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml/badge.svg" alt="Format code">
+  </a>
 </div>
 
 ---
