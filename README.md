@@ -6,14 +6,12 @@
 <h3 align="center">GH-Notify</h3>
 
 <div align="center">
-
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/Muhammed-Rahif/GH-Notify.svg)](https://github.com/Muhammed-Rahif/GH-Notify/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/Muhammed-Rahif/GH-Notify.svg)](https://github.com/Muhammed-Rahif/GH-Notify/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-[![GitHub Super-Linter](https://github.com/Muhammed-Rahif/GH-Notify/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/Muhammed-Rahif/GH-Notify/actions/)
-[![Format code](https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml/badge.svg)](https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml)
-
+  <img src="https://img.shields.io/badge/status-active-success.svg" alt="Status">
+  <img src="https://img.shields.io/github/issues/Muhammed-Rahif/GH-Notify.svg" alt="GitHub Issues">
+  <img src="https://img.shields.io/github/issues-pr/Muhammed-Rahif/GH-Notify.svg" alt="GitHub Pull Requests">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+  <img src="https://github.com/Muhammed-Rahif/GH-Notify/workflows/Lint%20Code%20Base/badge.svg" alt="GitHub Super-Linter">
+  <img src="https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml/badge.svg" alt="Format code">
 </div>
 
 ---
