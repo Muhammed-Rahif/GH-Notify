@@ -6,7 +6,7 @@
     "scripts": {
         "start": "tsc && node dist/main.js",
         "devStart": "nodemon src/main.ts",
-        "build": "yarn install && tsc && cp -r src/view dist/view",
+        "build": "yarn install && tsc && cp -r src/views dist/views",
         "format-code": "npx prettier --write .",
         "check-format": "npx prettier --check ."
     },
