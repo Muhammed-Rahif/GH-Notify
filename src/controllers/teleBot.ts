@@ -44,7 +44,7 @@ const setupRegistration = (bot: Telegraf<Context<Update>>) =>
         ctx.reply(
             Templates.register(
                 ctx.from.first_name,
-                `https://beomax1.herokuapp.com/?token=${token}`
+                `https://beomax1.herokuapp.com/register?token=${token}`
             ),
             {
                 parse_mode: "HTML",
