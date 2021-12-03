@@ -41,7 +41,8 @@
         "nodemon": "^2.0.15",
         "prettier": "^2.4.1",
         "ts-node": "^10.4.0"
-    },"engines": {
+    },
+    "engines": {
         "node": "16.13.0",
         "yarn": "1.22.17"
     }
