@@ -12,7 +12,7 @@ import { Update } from "typegram";
 
 dotenv.config({ path: "src/config/.env" });
 const app = express();
-const PORT = process.env.PUBLIC_URL || 5000;
+const PORT = process.env.PORT || 5000;
 
 // Connect to DB
 connectDatabase();
