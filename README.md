@@ -32,17 +32,16 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 ## 📝 Table of Contents
 
--   [🧐 About](#-about)
--   [🏁 Getting Started](#-getting-started)
-    -   [Prerequisites](#prerequisites)
-    -   [Installing](#installing)
--   [🔧 Running the tests](#-running-the-tests)
-    -   [Coding style tests](#coding-style-tests)
--   [⛏️ Built Using](#-built-using)
--   [✍️ Authors](#-authors)
+- [🧐 About](#-about)
+- [🏁 Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+- [🔧 Running the tests](#-running-the-tests)
+  - [Coding style tests](#coding-style-tests)
+- [⛏️ Built Using](#-built-using)
+- [✍️ Authors](#-authors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
