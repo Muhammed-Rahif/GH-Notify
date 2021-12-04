@@ -38,8 +38,11 @@ bower_components
 build/Release
 
 # Dependency directories
+src/client/node_modules
 node_modules/
 jspm_packages/
+
+src/client/yarn-error.log
 
 # TypeScript v1 declaration files
 typings/
@@ -105,3 +108,7 @@ dist
 .tern-port
 
 .vercel
+
+
+# build client
+src/views

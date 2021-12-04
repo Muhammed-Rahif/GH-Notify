@@ -6,6 +6,9 @@
     "typings": "dist/main",
     "scripts": {
         "start": "node dist/main.js",
+        "install:server": "yarn install",
+        "install:client": "cd src/client && yarn install",
+        "install:all": "yarn install:server && yarn install:client",
         "devStart": "nodemon src/main.ts",
         "build": "tsc && cp -r src/views dist/views",
         "format-code": "npx prettier --write .",
