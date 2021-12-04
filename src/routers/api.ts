@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { register } from "../controllers";
+import { registerUser } from "../controllers";
 import { getStarGazers } from "../helpers";
 import { validationResults } from "../middlewares/validations";
 import validateRegistrationForm from "../middlewares/validations/registration";
@@ -13,7 +13,12 @@ router.get("/stars", (req: Request, res: Response): void => {
         .catch(err => res.json({ success: false, data: err }));
 });
 
-router.post("/register", validateRegistrationForm, validationResults, register);
+router.post(
+    "/register-user",
+    validateRegistrationForm,
+    validationResults,
+    registerUser
+);
 
 router.get("/", (req: Request, res: Response) =>
     res.json({ success: true, message: "Everything works fine!" })

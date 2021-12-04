@@ -4,7 +4,7 @@ import { RegisterUser } from "../types/register";
 const registerUser = (data: RegisterUser): Promise<any> =>
     new Promise((resolve, reject) => {
         axios
-            .post("/api/v1/register", { ...data })
+            .post("/api/v1/register-user", { ...data })
             .then(response => {
                 let resData = response.data;
                 if (!resData.success) reject(resData);

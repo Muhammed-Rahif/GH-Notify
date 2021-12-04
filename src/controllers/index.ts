@@ -6,7 +6,7 @@ import ErrorResponse from "../utils/ErrorResponse";
 import UserModel from "../models/user";
 import JWT, { TokenExpiredError, JsonWebTokenError } from "jsonwebtoken";
 
-async function register(
+async function registerUser(
     req: ValidationResultRequest,
     res: Response,
     next: NextFunction
@@ -69,4 +69,4 @@ async function register(
     }
 }
 
-export { register };
+export { registerUser };
