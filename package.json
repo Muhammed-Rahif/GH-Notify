@@ -10,7 +10,9 @@
         "install:client": "cd src/client && yarn install",
         "install:all": "yarn install:server && yarn install:client",
         "devStart": "nodemon src/main.ts",
-        "build": "tsc && cp -r src/views dist/views",
+        "build:client":"cd src/client && yarn build && cd ../../ && pwd",
+        "build:server":"tsc && cp -r src/views dist/views",
+        "build": "yarn build:client && yarn build:server",
         "format-code": "npx prettier --write .",
         "check-format": "npx prettier --check ."
     },
