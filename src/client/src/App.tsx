@@ -7,18 +7,18 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 
 function App() {
-  return (
-    <div className="container">
-      <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="container">
+            <Navbar />
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/register" element={<Register />} />
+                </Routes>
+            </BrowserRouter>
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
