@@ -3,6 +3,10 @@ import { RecursivePartial } from "../types";
 import NotificationType from "../types/notifications";
 import UserModel from "../models/user";
 import { UserModelType } from "../types/user";
+import dotenv from "dotenv";
+
+// Env variables
+dotenv.config({ path: "src/config/.env" });
 
 const gh = new Octokit({ auth: process.env.GH_AUTH_TOKEN });
 
@@ -53,13 +57,13 @@ const getNewNotificationsForUser = (
                 await gh.activity.listNotificationsForAuthenticatedUser()
             ).data;
         } catch (err) {
-            throw err;
+            console.log(err);
         }
 
         if (userNotifications.length === 0)
             console.log(
                 `${validUser.username} don't have any new notifications on github!`
-            );
+            ); // fix erro throwing when pAT expires or not valid
 
         // filtering new notifications for a user ( Already sended notifications will be removed )
         let userNewNotifications = userNotifications.filter(notification => {

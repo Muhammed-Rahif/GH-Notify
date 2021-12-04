@@ -5,3 +5,8 @@
 .m-1 {
     margin: 1rem;
 }
+
+.error-msg {
+    font-size: 0.7rem;
+    color: crimson;
+}
