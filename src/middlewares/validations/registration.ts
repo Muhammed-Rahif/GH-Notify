@@ -21,8 +21,7 @@ const validateRegistrationForm = checkSchema({
     },
     token: {
         isJWT: {
-            errorMessage:
-                "Make sure your registration url or registration url token isn't broken.",
+            errorMessage: "Your registration url token is broken.",
         },
     },
 });

@@ -5,6 +5,7 @@ import { validationResults } from "../middlewares/validations";
 import validateRegistrationForm from "../middlewares/validations/registration";
 const router: Router = Router();
 
+// Get stargazers array
 router.get("/stars", (req: Request, res: Response): void => {
     getStarGazers()
         .then((starGazers): void => {
@@ -13,6 +14,7 @@ router.get("/stars", (req: Request, res: Response): void => {
         .catch(err => res.json({ success: false, data: err }));
 });
 
+// Register a new user
 router.post(
     "/register-user",
     validateRegistrationForm,
