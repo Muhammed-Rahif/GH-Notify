@@ -5,6 +5,7 @@ import {
     getAllUsers,
     getNewNotificationsForUser,
     getStarGazers,
+    getUserData,
     updateUser,
 } from "../helpers";
 import { UserModelType } from "../types/user";
@@ -30,8 +31,23 @@ function setUpBot(bot: Telegraf<Context<Update>>) {
 }
 
 const setupRegistration = (bot: Telegraf<Context<Update>>) =>
-    bot.command(["register", "start"], ctx => {
+    bot.command(["register", "start"], async ctx => {
         if (ctx.from.is_bot) return ctx.reply("Bot's not allowed!");
+
+        // Checking if this tele user already exist
+        try {
+            const userExist = await getUserData({ userId: ctx.from.id });
+            if (userExist.userId)
+                return ctx.reply(Templates.alreadyExist(), {
+                    parse_mode: "HTML",
+                    reply_to_message_id: ctx.message.message_id,
+                });
+        } catch (err) {
+            bot.telegram.sendMessage(
+                process.env.AUTHOR_ID as string,
+                err as string
+            );
+        }
 
         const token = JWT.sign(
             { userId: ctx.from.id },
