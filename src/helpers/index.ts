@@ -90,6 +90,11 @@ const updateUser = (username: string, data: RecursivePartial<UserModelType>) =>
             .catch(reject);
     });
 
+const getUserData = (query: object): Promise<UserModelType> =>
+    new Promise((resolve, reject) => {
+        UserModel.findOne(query).then(resolve).catch(reject);
+    });
+
 export {
     getStarGazers,
     checkIfStargazer,
@@ -97,4 +102,5 @@ export {
     getNewNotificationsForUser,
     getAllUsers,
     updateUser,
+    getUserData,
 };

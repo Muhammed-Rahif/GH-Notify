@@ -1,5 +1,5 @@
 import { NextFunction, Response } from "express";
-import { checkIfStargazer } from "../helpers";
+import { checkIfStargazer, getUserData } from "../helpers";
 import { RegistrationForm } from "../types/forms";
 import { ValidationResultRequest } from "../types/requests";
 import ErrorResponse from "../utils/ErrorResponse";
@@ -22,6 +22,20 @@ async function registerUser(
                 new ErrorResponse(
                     403,
                     "You need to star our repository to register."
+                )
+            );
+    } catch (err) {
+        return next(err);
+    }
+
+    // Checking if user already exists
+    try {
+        const userData = await getUserData({ username: regForm.username });
+        if (userData.username)
+            return next(
+                new ErrorResponse(
+                    403,
+                    "User already exist! Can't create with this username."
                 )
             );
     } catch (err) {
