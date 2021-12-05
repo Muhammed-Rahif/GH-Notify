@@ -11,7 +11,7 @@
         "devStart": "nodemon src/main.ts",
         "build:client": "cd src/client && yarn build && cd ../../ && pwd",
         "build:server": "tsc && cp -r src/views dist/views",
-        "build": "yarn install:server && yarn install:client && yarn build:client && yarn build:server",
+        "build": "yarn install:client && yarn build:client && yarn build:server",
         "format-code": "npx prettier --write .",
         "check-format": "npx prettier --check ."
     },
