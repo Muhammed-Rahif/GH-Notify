@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useState, MouseEvent } from "react";
 import { SiGithub } from "react-icons/si";
-import { MdDarkMode } from "react-icons/md";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 import $ from "jquery";
 
 function Navbar() {
-    function toggleTheme(): void {
+    const [darkMode, setDarkMode] = useState(
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+    );
+
+    function toggleTheme(event: MouseEvent<HTMLAnchorElement>): void {
+        event.preventDefault();
+
         const theme: string = $("html").attr("data-theme") as string;
         const prefersDarkMode: boolean =
             window.matchMedia &&
             window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        if (theme === "dark") $("html").attr("data-theme", "light");
-        else if (theme === "light") $("html").attr("data-theme", "dark");
-        else
+        if (theme === "dark") {
+            $("html").attr("data-theme", "light");
+            setDarkMode(false);
+        } else if (theme === "light") {
+            $("html").attr("data-theme", "dark");
+            setDarkMode(true);
+        } else
             prefersDarkMode
                 ? $("html").attr("data-theme", "light")
                 : $("html").attr("data-theme", "dark");
-
-        console.info($("html").attr("data-theme"));
     }
 
     return (
@@ -39,7 +47,7 @@ function Navbar() {
                 </li>
                 <li>
                     <a href="#dark-mode" onClick={toggleTheme}>
-                        <MdDarkMode />
+                        {darkMode ? <MdLightMode /> : <MdDarkMode />}
                     </a>
                 </li>
             </ul>

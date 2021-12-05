@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import toast from "cogo-toast";
 import qs from "query-string";
@@ -7,12 +7,16 @@ import { registerUser } from "../../helpers/api";
 import { RegisterUser } from "../../types/register";
 
 function RegisterContent() {
+    const [loading, setLoading] = useState(false);
+
     const location = useLocation();
 
     let search = qs.parse(location.search) as { token?: string };
 
     function onSubmit(data: { username: string; personalAccessToken: string }) {
         if (search.token) {
+            setLoading(true);
+
             const regData: RegisterUser = {
                 token: search.token,
                 personalAccessToken: data.personalAccessToken,
@@ -20,18 +24,22 @@ function RegisterContent() {
             };
 
             registerUser(regData)
-                .then(data =>
+                .then(data => {
+                    setLoading(false);
+
                     toast.success(data.message, {
                         position: "bottom-left",
                         hideAfter: 7,
-                    })
-                )
-                .catch(err =>
+                    });
+                })
+                .catch(err => {
+                    setLoading(false);
+
                     toast.error(err.message, {
                         position: "bottom-left",
                         hideAfter: 7,
-                    })
-                );
+                    });
+                });
         } else
             toast.error("Your registration url isn't valid!", {
                 position: "bottom-left",
@@ -112,7 +120,9 @@ function RegisterContent() {
                     </small>
                 )}
 
-                <button type="submit">Submit</button>
+                <button type="submit" aria-busy={loading ? "true" : "false"}>
+                    {loading ? "Please wait..." : "Submit"}
+                </button>
             </form>
         </article>
     );
