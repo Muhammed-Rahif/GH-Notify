@@ -1,0 +1,13 @@
+name: "Prevent heroku sleep"
+
+on:
+    schedule:
+        - cron: "*/20 * * * *"
+
+jobs:
+    prevent-sleep:
+        name: Prevent heroku sleep
+        runs-on: ubuntu-latest
+        steps:
+            - name: Send a get request to server
+              run: curl -X GET https://beomax1.herokuapp.com/api/v1/stars
