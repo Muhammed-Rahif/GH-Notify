@@ -123,3 +123,6 @@ yarn code-format
 See also the list of [contributors](https://github.com/Muhammed-Rahif/GH-Notify/contributors) who participated in this project.
 
 ## 🎉 Acknowledgements
+
+- [@octokit/rest](https://octokit.github.io/rest.js/) - GitHub REST API client for JavaScript
+- [telegraf](https://telegraf.js.org/) - Modern Telegram Bot Framework for Node.js
