@@ -120,3 +120,5 @@ yarn code-format
 -   [@Muhammed-Rahif](https://github.com/Muhammed-Rahif) - Idea & The whole job so far
 
 See also the list of [contributors](https://github.com/Muhammed-Rahif/GH-Notify/contributors) who participated in this project.
+
+## 🎉 Acknowledgements
