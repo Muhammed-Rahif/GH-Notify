@@ -124,6 +124,6 @@ See also the list of [contributors](https://github.com/Muhammed-Rahif/GH-Notify/
 
 ## 🎉 Acknowledgements
 
-- [@octokit/rest](https://octokit.github.io/rest.js/) - GitHub REST API client for JavaScript
-- [telegraf](https://telegraf.js.org/) - Modern Telegram Bot Framework for Node.js
-- [picocss](https://picocss.com/) - Minimal CSS Framework for semantic HTML 
+-   [@octokit/rest](https://octokit.github.io/rest.js/) - GitHub REST API client for JavaScript
+-   [telegraf](https://telegraf.js.org/) - Modern Telegram Bot Framework for Node.js
+-   [picocss](https://picocss.com/) - Minimal CSS Framework for semantic HTML
