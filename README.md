@@ -43,6 +43,7 @@
   - [Coding style tests](#coding-style-tests)
 - [⛏️ Built Using](#-built-using)
 - [✍️ Authors](#-authors)
+- [🎉 Acknowledgements](#-acknowledgements)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <!-- prettier-ignore-end -->
@@ -120,3 +121,9 @@ yarn code-format
 -   [@Muhammed-Rahif](https://github.com/Muhammed-Rahif) - Idea & The whole job so far
 
 See also the list of [contributors](https://github.com/Muhammed-Rahif/GH-Notify/contributors) who participated in this project.
+
+## 🎉 Acknowledgements
+
+- [@octokit/rest](https://octokit.github.io/rest.js/) - GitHub REST API client for JavaScript
+- [telegraf](https://telegraf.js.org/) - Modern Telegram Bot Framework for Node.js
+- [picocss](https://picocss.com/) - Minimal CSS Framework for semantic HTML 
