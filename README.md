@@ -20,7 +20,7 @@
     <img src="https://github.com/Muhammed-Rahif/GH-Notify/workflows/Lint%20Code%20Base/badge.svg" alt="GitHub Super-Linter">
   </a>
   <a href="https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml">
-    <img src="https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml/badge.svg" alt="Format code">
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="Code style">
   </a>
 </div>
 
