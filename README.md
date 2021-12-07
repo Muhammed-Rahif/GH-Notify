@@ -22,6 +22,7 @@
   <a href="https://github.com/Muhammed-Rahif/GH-Notify/actions/workflows/format-code.yml">
     <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="Code style">
   </a>
+  <a href="https://www.codefactor.io/repository/github/muhammed-rahif/gh-notify"><img src="https://www.codefactor.io/repository/github/muhammed-rahif/gh-notify/badge" alt="CodeFactor" /></a>
 </div>
 
 ---
