@@ -10,7 +10,7 @@ class Templates {
             reason
         )}\n<b>◣▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲◢</b>`;
     static alreadyExist = (): string =>
-        `<b>User already exist on this telegram user id, can't register as a new user. But you can edit your data by sending /update, then bot will give you a webpage link to edit your data.</b>`;
+        `<b>User already exist on this telegram user id, can't register as a new user. But you can edit your data by sending /update_data, then bot will give you a webpage link to edit your data.</b>`;
 }
 
 export default Templates;
