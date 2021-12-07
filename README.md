@@ -26,7 +26,7 @@
 
 ---
 
-<p align="center"> A GitHub notification receiver from Telegram.
+<p align="center"> A GitHub notification receiver on Telegram.
     <br> 
 </p>
 
