@@ -22,10 +22,15 @@ function Navbar() {
         } else if (theme === "light") {
             $("html").attr("data-theme", "dark");
             setDarkMode(true);
-        } else
-            prefersDarkMode
-                ? $("html").attr("data-theme", "light")
-                : $("html").attr("data-theme", "dark");
+        } else {
+            if (prefersDarkMode) {
+                $("html").attr("data-theme", "light");
+                setDarkMode(false);
+            } else {
+                $("html").attr("data-theme", "dark");
+                setDarkMode(true);
+            }
+        }
     }
 
     return (
