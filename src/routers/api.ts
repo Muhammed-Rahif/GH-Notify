@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { registerUser } from "../controllers";
+import { registerUser, updateUser } from "../controllers";
 import { getStarGazers } from "../helpers";
 import { validationResults } from "../middlewares/validations";
 import validateRegistrationForm from "../middlewares/validations/registration";
@@ -20,6 +20,14 @@ router.post(
     validateRegistrationForm,
     validationResults,
     registerUser
+);
+
+// Update user data
+router.put(
+    "/update-user",
+    validateRegistrationForm,
+    validationResults,
+    updateUser
 );
 
 router.get("/", (req: Request, res: Response) =>

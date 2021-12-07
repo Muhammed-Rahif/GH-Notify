@@ -83,7 +83,10 @@ const getAllUsers = (usernames?: Array<string>) =>
         UserModel.find(query).then(resolve).catch(reject);
     });
 
-const updateUser = (username: string, data: RecursivePartial<UserModelType>) =>
+const updateUserData = (
+    username: string,
+    data: RecursivePartial<UserModelType>
+) =>
     new Promise((resolve, reject) => {
         UserModel.findOneAndUpdate({ username }, { ...data })
             .then(resolve)
@@ -103,6 +106,6 @@ export {
     sortNotifications,
     getNewNotificationsForUser,
     getAllUsers,
-    updateUser,
+    updateUserData,
     getUserData,
 };
