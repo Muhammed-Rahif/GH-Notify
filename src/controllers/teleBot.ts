@@ -6,7 +6,7 @@ import {
     getNewNotificationsForUser,
     getStarGazers,
     getUserData,
-    updateUser,
+    updateUserData,
 } from "../helpers";
 import { UserModelType } from "../types/user";
 import Templates from "../utils/tele-bot/templates";
@@ -170,7 +170,7 @@ const sendNotificationForUser = (
                 reply_markup: buttons,
             })
             .then(response => {
-                updateUser(username, { lastReceivedOn: updatedAt })
+                updateUserData(username, { lastReceivedOn: updatedAt })
                     .then(resolve)
                     .catch(reject);
             })

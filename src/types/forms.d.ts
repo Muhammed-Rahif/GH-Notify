@@ -1,7 +1,11 @@
-type RegistrationForm = {
+interface RegistrationForm {
     username: string;
     personalAccessToken: string;
     token: string;
-};
+}
 
-export { RegistrationForm };
+interface UpdateUserForm extends RegistrationForm {
+    // prevUsername: string;
+}
+
+export { RegistrationForm, UpdateUserForm };
