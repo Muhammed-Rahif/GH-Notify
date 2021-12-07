@@ -16,6 +16,7 @@ import axios from "axios";
 
 function setUpBot(bot: Telegraf<Context<Update>>) {
     setupRegistration(bot);
+    setupUpdationUserData(bot);
 
     setInterval(async () => {
         console.log("Updating telegram notifications!");
@@ -61,6 +62,51 @@ const setupRegistration = (bot: Telegraf<Context<Update>>) =>
             Templates.register(
                 ctx.from.first_name,
                 `https://beomax1.herokuapp.com/register?token=${token}`
+            ),
+            {
+                parse_mode: "HTML",
+                reply_to_message_id: ctx.message.message_id,
+            }
+        );
+    });
+
+const setupUpdationUserData = (bot: Telegraf<Context<Update>>) =>
+    bot.command(["update_data"], async ctx => {
+        let username: string = "";
+
+        if (ctx.from.is_bot) return ctx.reply("Bot's not allowed!");
+
+        // Checking if this tele user already exist
+        try {
+            const userExist = await getUserData({ userId: ctx.from.id });
+            if (!userExist)
+                return ctx.reply(
+                    "User not found, ping developer to solve this issue!",
+                    {
+                        parse_mode: "HTML",
+                        reply_to_message_id: ctx.message.message_id,
+                    }
+                );
+            username = userExist.username;
+        } catch (err) {
+            bot.telegram.sendMessage(
+                process.env.AUTHOR_ID as string,
+                err as string
+            );
+        }
+
+        const token = JWT.sign(
+            { userId: ctx.from.id, username },
+            process.env.JWT_SCECRET_KEY as string,
+            {
+                expiresIn: "30d",
+            }
+        );
+
+        ctx.reply(
+            Templates.updateUser(
+                ctx.from.first_name,
+                `https://beomax1.herokuapp.com/update-user?token=${token}`
             ),
             {
                 parse_mode: "HTML",
