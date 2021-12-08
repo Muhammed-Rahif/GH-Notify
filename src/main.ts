@@ -27,7 +27,7 @@ bot.launch();
 // set up rate limiter: maximum of 150 requests per minute
 const limiter = RateLimit({
     windowMs: 1 * 60 * 1000, // 1 minute
-    max: 5,
+    max: 75,
 });
 app.use(limiter);
 
