@@ -2,8 +2,8 @@ import { checkSchema } from "express-validator";
 
 const validateRegistrationForm = checkSchema({
     username: {
-        isEmpty: {
-            errorMessage: "Github personal access token can't be empty.",
+        notEmpty: {
+            errorMessage: "Username can't be empty.",
         },
         isString: {
             errorMessage: "Username must be string.",

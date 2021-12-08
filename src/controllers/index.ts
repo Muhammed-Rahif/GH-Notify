@@ -57,7 +57,7 @@ async function registerUser(
     // Checking if user already exists
     try {
         const userData = await getUserData({ username: regForm.username });
-        if (userData.username)
+        if (userData && userData.username)
             return next(
                 new ErrorResponse(
                     403,
