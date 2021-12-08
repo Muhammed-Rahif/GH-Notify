@@ -5,7 +5,7 @@ interface RegistrationForm {
 }
 
 interface UpdateUserForm extends RegistrationForm {
-    // prevUsername: string;
+    username?: string;
 }
 
 export { RegistrationForm, UpdateUserForm };

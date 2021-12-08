@@ -1,8 +1,9 @@
-import { Router, Request, Response } from "express";
+import { Router, Request, Response, NextFunction } from "express";
 import { registerUser, updateUser } from "../controllers";
 import { getStarGazers } from "../helpers";
 import { validationResults } from "../middlewares/validations";
 import validateRegistrationForm from "../middlewares/validations/registration";
+import validateUserDataUpdation from "../middlewares/validations/userDataUpdation";
 const router: Router = Router();
 
 // Get stargazers array
@@ -25,7 +26,7 @@ router.post(
 // Update user data
 router.put(
     "/update-user",
-    validateRegistrationForm,
+    validateUserDataUpdation,
     validationResults,
     updateUser
 );
