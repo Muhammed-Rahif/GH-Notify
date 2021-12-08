@@ -146,7 +146,9 @@ async function updateUser(
 
     // Checking if user starred our repo
     try {
-        const isStargazer = await checkIfStargazer(updateUserForm.username);
+        const isStargazer = await checkIfStargazer(
+            updateUserForm.username || prevUsername
+        );
         if (!isStargazer)
             return next(
                 new ErrorResponse(
