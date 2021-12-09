@@ -100,6 +100,13 @@ const getUserData = (
         UserModel.findOne(query).then(resolve).catch(reject);
     });
 
+const deleteUserData = (
+    query: RecursivePartial<UserModelType>
+): Promise<UserModelType> =>
+    new Promise((resolve, reject) => {
+        UserModel.findOneAndDelete(query).then(resolve).catch(reject);
+    });
+
 export {
     getStarGazers,
     checkIfStargazer,
@@ -108,4 +115,5 @@ export {
     getAllUsers,
     updateUserData,
     getUserData,
+    deleteUserData,
 };
