@@ -2,6 +2,7 @@ import { Context, Telegraf } from "telegraf";
 import { InlineKeyboardMarkup, Update } from "typegram";
 import {
     checkIfStargazer,
+    deleteUserData,
     getAllUsers,
     getNewNotificationsForUser,
     getStarGazers,
@@ -17,6 +18,7 @@ import axios from "axios";
 function setUpBot(bot: Telegraf<Context<Update>>) {
     setupRegistration(bot);
     setupUpdationUserData(bot);
+    setupStopUserService(bot);
 
     setInterval(async () => {
         console.log("Updating telegram notifications!");
@@ -113,6 +115,70 @@ const setupUpdationUserData = (bot: Telegraf<Context<Update>>) =>
                 reply_to_message_id: ctx.message.message_id,
             }
         );
+    });
+
+const setupStopUserService = (bot: Telegraf<Context<Update>>) =>
+    bot.command(["stop_service"], async ctx => {
+        let username: string = "";
+
+        if (ctx.from.is_bot) return ctx.reply("Bot's not allowed!");
+
+        // Checking if this tele user already exist
+        try {
+            const userExist = await getUserData({ userId: ctx.from.id });
+            if (!userExist)
+                return ctx.reply(
+                    "User not found, ping developer to solve this issue!",
+                    {
+                        parse_mode: "HTML",
+                        reply_to_message_id: ctx.message.message_id,
+                    }
+                );
+            username = userExist.username;
+        } catch (err) {
+            bot.telegram.sendMessage(
+                process.env.AUTHOR_ID as string,
+                err as string
+            );
+        }
+
+        // Creating btns for reply msg
+        let buttons: InlineKeyboardMarkup = {
+            inline_keyboard: [
+                [
+                    {
+                        text: "Yes, stop it!",
+                        callback_data: "stop_user_service_now",
+                    },
+                    {
+                        text: "Nop, ignore it!",
+                        callback_data: "ignore_stop_user_service",
+                    },
+                ],
+            ],
+        };
+
+        // Stop service
+        bot.action("stop_user_service_now", async ctx => {
+            const deletedUser = await deleteUserData({ userId: ctx.from?.id });
+            console.log(`${deletedUser.username} has stopped thier service!`);
+
+            return ctx.editMessageText(
+                "Got it! 👍️ Your service is stopped, and your data has been removed from our server! You can reregister at any if you want by sending /register. Thank you!"
+            );
+        });
+
+        // Ignore action
+        bot.action("ignore_stop_user_service", ctx =>
+            ctx.editMessageText("Got it! 👍️ Stop service action is ignored!")
+        );
+
+        // Send confirm message
+        ctx.reply("Are you sure to want stop our service!", {
+            parse_mode: "HTML",
+            reply_to_message_id: ctx.message.message_id,
+            reply_markup: buttons,
+        });
     });
 
 const sendAllNewNotifications = (bot: Telegraf<Context<Update>>) =>
