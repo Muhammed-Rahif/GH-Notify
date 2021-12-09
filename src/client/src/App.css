@@ -10,3 +10,7 @@
     font-size: 0.7rem;
     color: crimson;
 }
+
+.m-auto {
+    margin: auto;
+}
