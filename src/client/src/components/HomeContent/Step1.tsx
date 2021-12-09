@@ -5,36 +5,29 @@ function Step1() {
         <p>
             <h3 className="mb-0">
                 <b>Step 1</b>
-                <small> - Get your GitHub personal access token.</small>
+                <small> - Star our repository.</small>
             </h3>
-            Create a personal access token from GitHub with permission to access
-            your notifications.{" "}
+            You must <b>need to star our repository</b> on GitHub to complete
+            the registration. Star our repo{" "}
+            <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://github.com/Muhammed-Rahif/GH-Notify/stargazers"
+            >
+                from here.!
+            </a>
             <div>
                 <img
+                    src="assets/screenshots/star-repo.png"
+                    alt="Star repo"
                     className="m-1"
-                    src="assets/screenshots/permissions.png"
-                    alt="Permission"
                 />
             </div>
-            <small>
-                <i>
-                    For more help for creating personal access token on GitHub,{" "}
-                    <a
-                        rel="noreferrer"
-                        target="_blank"
-                        href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token"
-                    >
-                        Read this.
-                    </a>
-                </i>
-            </small>
-            <br />
-            After all, generate your access token and <mark>copy it</mark>.
-            <img
-                className="m-1"
-                src="assets/screenshots/copy-token.png"
-                alt="Copy token"
-            />
+            <mark>
+                If you didn't star, registration will fail. And keep in mind if
+                you remove star from our repo after registration you will not
+                get notifications from our bot.
+            </mark>
         </p>
     );
 }
