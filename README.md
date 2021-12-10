@@ -90,8 +90,6 @@ And start the local server
 
 Go to http://localhost:5000 ( By default ) to view the output.
 
-
-
 ## 🔧 Running the tests
 
 <!-- To run the tests :-
