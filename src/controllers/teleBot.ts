@@ -165,11 +165,11 @@ const setupStopUserService = (bot: Telegraf<Context<Update>>) =>
             inline_keyboard: [
                 [
                     {
-                        text: "Yes, stop it!",
+                        text: "Yes, stop it 😾!",
                         callback_data: "stop_user_service_now",
                     },
                     {
-                        text: "Nop, ignore it!",
+                        text: "Nop 🙅, ignore it!",
                         callback_data: "ignore_stop_user_service",
                     },
                 ],
@@ -190,7 +190,7 @@ const setupStopUserService = (bot: Telegraf<Context<Update>>) =>
         );
 
         // Send confirm message
-        ctx.reply(Templates.stopService(), {
+        ctx.reply(Templates.stopService(ctx.from.first_name), {
             parse_mode: "HTML",
             reply_to_message_id: ctx.message.message_id,
             reply_markup: buttons,

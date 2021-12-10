@@ -18,19 +18,20 @@ class Templates {
             reason
         )}</b>\nRelated repository is <b><a href="https://github.com/${repo}">${repo}</a>.</b>\nRelated user is <b><a href="https://github.com/${username}">${username}</a>.</b>`;
 
-    static alreadyExist = (username: string): string =>
-        `Hello <b>${username} 👋,</b>\nIt seems like <b>you are already registered in this telegram user id. So you can't register as a new user 🤷!</b>\n\n<i>But if you are looking for updating your github personal access token ( If it has been changed, maybe because of expiring ), then you can send /update_access_token, then bot will give you a webpage form link to update your access token 😇!</i>`;
+    static alreadyExist = (fullName: string): string =>
+        `Hello <b>${fullName} 👋,</b>\nIt seems like <b>you are already registered in this telegram user id. So you can't register as a new user 🤷!</b>\n\n<i>But if you are looking for updating your github personal access token ( If it has been changed, maybe because of expiring ), then you can send /update_access_token, then bot will give you a webpage form link to update your access token 😇!</i>`;
 
     static notRegistered = (fullName: string): string =>
         `Hello <b>${fullName}</b> 👋, It's very sad to see that you didn't registered with me! 🥺\n\nSo first you register by sending /register ( <b>It's completely free! 🎉</b> ) , then you can stop my service! 😏`;
 
     static serviceStopped = (): string =>
-        `Got it! 👍️ Your service is stopped, and your data has been removed from our server! You can re-register at any if you want by sending /register. Thank you!`;
+        `Got it! 👍️ <b>Your service is stopped 🥲!</b> And <b>your data has been removed from our server!</b>\n\n<i>You can re-register at any if you want by sending /register.</i>\n\n<b>Thank you 🥀!</b>`;
 
     static serviceStopIgnored = (): string =>
         `Got it! 👍️ Stop service action is ignored!`;
 
-    static stopService = (): string => `Are you sure to want stop our service!`;
+    static stopService = (fullName: string): string =>
+        `Hello <b>${fullName} 👋</b>,\n<b>Are you sure to want stop our service 😟?!</b>\n\n<i>What will happen if you proceed with this action 🤨?\n1. You will not get github notification messages from me, for you.\n2.Your data that we stored in our database will be removed permenantly!</i>\n\n<b>Are you still want to proceed with this action 🤔???</b>`;
 }
 
 export default Templates;
