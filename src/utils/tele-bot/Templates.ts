@@ -18,8 +18,8 @@ class Templates {
             reason
         )}</b>\nRelated repository is <b><a href="https://github.com/${repo}">${repo}</a>.</b>\nRelated user is <b><a href="https://github.com/${username}">${username}</a>.</b>`;
 
-    static alreadyExist = (): string =>
-        `<b>User already exist on this telegram user id, can't register as a new user. But you can edit your data by sending /update_data, then bot will give you a webpage link to edit your data.</b>`;
+    static alreadyExist = (username: string): string =>
+        `Hello <b>${username} 👋,</b>\nIt seems like <b>you are already registered in this telegram user id. So you can't register as a new user 🤷!</b>\n\n<i>But if you are looking for updating your github personal access token ( If it has been changed, maybe because of expiring ), then you can send /update_access_token, then bot will give you a webpage form link to update your access token 😇!</i>`;
 
     static notRegistered = (fullName: string): string =>
         `Hello <b>${fullName}</b> 👋, It's very sad to see that you didn't registered with me! 🥺\n\nSo first you register by sending /register ( <b>It's completely free! 🎉</b> ) , then you can stop my service! 😏`;

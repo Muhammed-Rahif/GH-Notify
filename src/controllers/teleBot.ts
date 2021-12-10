@@ -41,7 +41,7 @@ const setupRegistration = (bot: Telegraf<Context<Update>>) =>
         try {
             const userExist = await getUserData({ userId: ctx.from.id });
             if (userExist && userExist.userId)
-                return ctx.reply(Templates.alreadyExist(), {
+                return ctx.reply(Templates.alreadyExist(ctx.from.first_name), {
                     parse_mode: "HTML",
                     reply_to_message_id: ctx.message.message_id,
                 });
