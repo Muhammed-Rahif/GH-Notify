@@ -5,7 +5,7 @@ import qs from "query-string";
 import { useForm } from "react-hook-form";
 import { updateUser } from "../../helpers/api";
 
-function UpdateUserContent() {
+function UpdateAccessTokenContent() {
     const [loading, setLoading] = useState(false);
 
     const location = useLocation();
@@ -101,4 +101,4 @@ function UpdateUserContent() {
     );
 }
 
-export default UpdateUserContent;
+export default UpdateAccessTokenContent;

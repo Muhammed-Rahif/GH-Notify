@@ -10,7 +10,7 @@ import {
     updateUserData,
 } from "../helpers";
 import { UserModelType } from "../types/user";
-import Templates from "../utils/tele-bot/templates";
+import Templates from "../utils/tele-bot/Templates";
 import JWT from "jsonwebtoken";
 import NotificationType from "../types/notifications";
 import axios from "axios";
@@ -60,20 +60,35 @@ const setupRegistration = (bot: Telegraf<Context<Update>>) =>
             }
         );
 
-        ctx.reply(
-            Templates.register(
-                ctx.from.first_name,
-                `https://beomax1.herokuapp.com/register?token=${token}`
-            ),
-            {
-                parse_mode: "HTML",
-                reply_to_message_id: ctx.message.message_id,
-            }
-        );
+        const registerUrl: string = `https://beomax1.herokuapp.com/register?token=${token}`;
+
+        // Creating btns for reply msg
+        let buttons: InlineKeyboardMarkup = {
+            inline_keyboard: [
+                [
+                    {
+                        text: "Register personal access token 📝",
+                        url: registerUrl,
+                    },
+                ],
+                [
+                    {
+                        text: "How to setup ℹ️",
+                        url: "https://beomax1.herokuapp.com",
+                    },
+                ],
+            ],
+        };
+
+        ctx.reply(Templates.register(ctx.from.first_name, registerUrl), {
+            parse_mode: "HTML",
+            reply_to_message_id: ctx.message.message_id,
+            reply_markup: buttons,
+        });
     });
 
 const setupUpdationUserData = (bot: Telegraf<Context<Update>>) =>
-    bot.command(["update_data"], async ctx => {
+    bot.command(["update_access_token"], async ctx => {
         let username: string = "";
 
         if (ctx.from.is_bot) return ctx.reply("Bot's not allowed!");
@@ -82,13 +97,10 @@ const setupUpdationUserData = (bot: Telegraf<Context<Update>>) =>
         try {
             const userExist = await getUserData({ userId: ctx.from.id });
             if (!userExist)
-                return ctx.reply(
-                    "User not found, ping developer to solve this issue!",
-                    {
-                        parse_mode: "HTML",
-                        reply_to_message_id: ctx.message.message_id,
-                    }
-                );
+                return ctx.reply(Templates.notRegistered(ctx.from.first_name), {
+                    parse_mode: "HTML",
+                    reply_to_message_id: ctx.message.message_id,
+                });
             username = userExist.username;
         } catch (err) {
             bot.telegram.sendMessage(
@@ -105,16 +117,25 @@ const setupUpdationUserData = (bot: Telegraf<Context<Update>>) =>
             }
         );
 
-        ctx.reply(
-            Templates.updateUser(
-                ctx.from.first_name,
-                `https://beomax1.herokuapp.com/update-user?token=${token}`
-            ),
-            {
-                parse_mode: "HTML",
-                reply_to_message_id: ctx.message.message_id,
-            }
-        );
+        const updateFormUrl: string = `https://beomax1.herokuapp.com/update-access-token?token=${token}`;
+
+        // Creating btns for reply msg
+        let buttons: InlineKeyboardMarkup = {
+            inline_keyboard: [
+                [
+                    {
+                        text: "Update personal access token 📝",
+                        url: updateFormUrl,
+                    },
+                ],
+            ],
+        };
+
+        ctx.reply(Templates.updateUser(ctx.from.first_name, updateFormUrl), {
+            parse_mode: "HTML",
+            reply_to_message_id: ctx.message.message_id,
+            reply_markup: buttons,
+        });
     });
 
 const setupStopUserService = (bot: Telegraf<Context<Update>>) =>
@@ -127,13 +148,10 @@ const setupStopUserService = (bot: Telegraf<Context<Update>>) =>
         try {
             const userExist = await getUserData({ userId: ctx.from.id });
             if (!userExist)
-                return ctx.reply(
-                    "User not found, ping developer to solve this issue!",
-                    {
-                        parse_mode: "HTML",
-                        reply_to_message_id: ctx.message.message_id,
-                    }
-                );
+                return ctx.reply(Templates.notRegistered(ctx.from.first_name), {
+                    parse_mode: "HTML",
+                    reply_to_message_id: ctx.message.message_id,
+                });
             username = userExist.username;
         } catch (err) {
             bot.telegram.sendMessage(
@@ -163,18 +181,16 @@ const setupStopUserService = (bot: Telegraf<Context<Update>>) =>
             const deletedUser = await deleteUserData({ userId: ctx.from?.id });
             console.log(`${deletedUser.username} has stopped thier service!`);
 
-            return ctx.editMessageText(
-                "Got it! 👍️ Your service is stopped, and your data has been removed from our server! You can reregister at any if you want by sending /register. Thank you!"
-            );
+            return ctx.editMessageText(Templates.serviceStopped());
         });
 
         // Ignore action
         bot.action("ignore_stop_user_service", ctx =>
-            ctx.editMessageText("Got it! 👍️ Stop service action is ignored!")
+            ctx.editMessageText(Templates.serviceStopIgnored())
         );
 
         // Send confirm message
-        ctx.reply("Are you sure to want stop our service!", {
+        ctx.reply(Templates.stopService(), {
             parse_mode: "HTML",
             reply_to_message_id: ctx.message.message_id,
             reply_markup: buttons,
@@ -224,13 +240,16 @@ const sendAllNewNotifications = (bot: Telegraf<Context<Update>>) =>
                     sendNotificationForUser(
                         bot,
                         user.userId,
-                        Templates.notification(
+                        Templates.ghNotification(
                             notification.subject.title,
                             notification.subject.type,
-                            notification.reason
+                            notification.reason,
+                            notification.repository.full_name,
+                            details.user.login
                         ),
                         notification.updated_at,
                         user.username,
+                        notification.repository.full_name,
                         details.html_url
                     ).catch(reject);
                 } // Send notification for a specific user
@@ -238,13 +257,16 @@ const sendAllNewNotifications = (bot: Telegraf<Context<Update>>) =>
                     sendNotificationForUser(
                         bot,
                         user.userId,
-                        Templates.notification(
+                        Templates.ghNotification(
                             notification.subject.title,
                             notification.subject.type,
-                            notification.reason
+                            notification.reason,
+                            notification.repository.full_name,
+                            notification.repository.owner.login
                         ),
                         notification.updated_at,
-                        user.username
+                        user.username,
+                        notification.repository.full_name
                     ).catch(reject);
             });
         });
@@ -256,6 +278,7 @@ const sendNotificationForUser = (
     msg: string,
     updatedAt: string | Date,
     username: string,
+    repo: string,
     url?: string
 ) =>
     new Promise((resolve, reject) => {
@@ -267,8 +290,33 @@ const sendNotificationForUser = (
                 inline_keyboard: [
                     [
                         {
-                            text: "View",
+                            text: "View notification 👀",
                             url: url,
+                        },
+                    ],
+                    [
+                        {
+                            text: "View repository 📘",
+                            url: `https://github.com/${repo}`,
+                        },
+                        {
+                            text: "View user 👤",
+                            url: `https://github.com/${username}`,
+                        },
+                    ],
+                ],
+            };
+        } else {
+            buttons = {
+                inline_keyboard: [
+                    [
+                        {
+                            text: "View repository 📘",
+                            url: `https://github.com/${repo}`,
+                        },
+                        {
+                            text: "View user 👤",
+                            url: `https://github.com/${username}`,
                         },
                     ],
                 ],

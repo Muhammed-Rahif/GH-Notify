@@ -1,4 +1,4 @@
-function getReasonDesc(reason: string) {
+function getReasonDescription(reason: string) {
     switch (reason) {
         case "assign":
             return "You were assigned to the issue.";
@@ -29,4 +29,4 @@ function getReasonDesc(reason: string) {
     }
 }
 
-export { getReasonDesc };
+export { getReasonDescription };
