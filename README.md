@@ -88,7 +88,9 @@ And start the local server
      yarn start
     ```
 
-Go to http://localhost:3001 to view the output.
+Go to http://localhost:5000 ( By default ) to view the output.
+
+
 
 ## 🔧 Running the tests
 
