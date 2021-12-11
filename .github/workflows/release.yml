@@ -17,6 +17,7 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v3.7.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          fallback-version: 1.0.0
 
       - name: Create release
         uses: actions/create-release@v1
