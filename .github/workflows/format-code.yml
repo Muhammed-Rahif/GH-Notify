@@ -16,10 +16,10 @@ jobs:
             - name: Format code
               id: check
               run: yarn format-code
-            #   continue-on-error: true
+              continue-on-error: true
 
             - name: Create PR
-              #   if: steps.check.outcome != 'success'
+              if: steps.check.outcome != 'success'
               id: cpr
               uses: peter-evans/create-pull-request@v3
               with:
