@@ -32,6 +32,9 @@ class Templates {
 
     static stopService = (fullName: string): string =>
         `Hello <b>${fullName} 👋</b>,\n<b>Are you sure to want stop our service 😟?!</b>\n\n<i>What will happen if you proceed with this action 🤨?\n1. You will not get github notification messages from me, for you.\n2.Your data that we stored in our database will be removed permenantly!</i>\n\n<b>Are you still want to proceed with this action 🤔???</b>`;
+
+    static tokenInvalid = (fullName: string): string =>
+        `Hello <b>${fullName} 👋</b>,\nIt seems like <b>your github access token is expired or invalid 😐!</b> \n\n<b>PLEASE UPDATE YOUR VALID GITHUB ACCESS TOKEN SOON BY SENDING /update_access_token!</b>`;
 }
 
 export default Templates;

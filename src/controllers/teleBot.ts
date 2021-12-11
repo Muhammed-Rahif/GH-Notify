@@ -341,4 +341,19 @@ const sendNotificationForUser = (
             .catch(reject);
     });
 
-export { setUpBot };
+const sendMsgForUser = (
+    bot: Telegraf<Context<Update>>,
+    userId: number,
+    msg: string
+) =>
+    new Promise((resolve, reject) => {
+        // Sending msg to user
+        bot.telegram
+            .sendMessage(userId, msg, {
+                parse_mode: "HTML",
+            })
+            .then(resolve)
+            .catch(reject);
+    });
+
+export { setUpBot, sendMsgForUser };
