@@ -181,12 +181,16 @@ const setupStopUserService = (bot: Telegraf<Context<Update>>) =>
             const deletedUser = await deleteUserData({ userId: ctx.from?.id });
             console.log(`${deletedUser.username} has stopped thier service!`);
 
-            return ctx.editMessageText(Templates.serviceStopped());
+            return ctx.editMessageText(Templates.serviceStopped(), {
+                parse_mode: "HTML",
+            });
         });
 
         // Ignore action
         bot.action("ignore_stop_user_service", ctx =>
-            ctx.editMessageText(Templates.serviceStopIgnored())
+            ctx.editMessageText(Templates.serviceStopIgnored(), {
+                parse_mode: "HTML",
+            })
         );
 
         // Send confirm message

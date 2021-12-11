@@ -25,10 +25,10 @@ class Templates {
         `Hello <b>${fullName}</b> 👋, It's very sad to see that you didn't registered with me! 🥺\n\nSo first you register by sending /register ( <b>It's completely free! 🎉</b> ) , then you can stop my service! 😏`;
 
     static serviceStopped = (): string =>
-        `Got it! 👍️ <b>Your service is stopped 🥲!</b> And <b>your data has been removed from our server!</b>\n\n<i>You can re-register at any if you want by sending /register.</i>\n\n<b>Thank you 🥀!</b>`;
+        `Got it! 👍️ <b>Your service is stopped 🥲!</b> And <b>your data has been removed from our server!</b>\n\n<i>You can re-register at any time if you want by sending /register.</i>\n\n<b>Thank you 🥀!</b>`;
 
     static serviceStopIgnored = (): string =>
-        `Got it! 👍️ Stop service action is ignored!`;
+        `Got it! 👍️ <b>Stop service action is ignored 😇!</b>`;
 
     static stopService = (fullName: string): string =>
         `Hello <b>${fullName} 👋</b>,\n<b>Are you sure to want stop our service 😟?!</b>\n\n<i>What will happen if you proceed with this action 🤨?\n1. You will not get github notification messages from me, for you.\n2.Your data that we stored in our database will be removed permenantly!</i>\n\n<b>Are you still want to proceed with this action 🤔???</b>`;
