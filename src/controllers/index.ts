@@ -166,7 +166,6 @@ async function updateUser(
             prevUsername,
             updateUserForm
         );
-        console.log({ updatedUserData });
         res.status(200).json({
             success: true,
             message: "User data updation successful!",
