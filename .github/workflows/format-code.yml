@@ -15,7 +15,7 @@ jobs:
 
             - name: Format code
               id: check
-              run: yarn ci && yarn format-code
+              run: yarn install && yarn format-code
             #   continue-on-error: true
 
             - name: Create PR
