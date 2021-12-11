@@ -1,7 +1,7 @@
 import React from "react";
-import UpdateUserContent from "../components/UpdateUserContent/UpdateUserContent";
+import UpdateUserContent from "../components/UpdateAccessTokenContent/UpdateAccessTokenContent";
 
-function UpdateUser() {
+function UpdateAccessToken() {
     return (
         <div>
             {/* Header section */}
@@ -15,4 +15,4 @@ function UpdateUser() {
     );
 }
 
-export default UpdateUser;
+export default UpdateAccessToken;

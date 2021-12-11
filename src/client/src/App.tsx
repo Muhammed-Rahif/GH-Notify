@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
-import UpdateUser from "./pages/UpdateUser";
+import UpdateAccessToken from "./pages/UpdateAccessToken";
 
 function App() {
     return (
@@ -15,7 +15,10 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/register" element={<Register />} />
-                    <Route path="/update-user" element={<UpdateUser />} />
+                    <Route
+                        path="/update-access-token"
+                        element={<UpdateAccessToken />}
+                    />
                 </Routes>
             </BrowserRouter>
             <Footer />
