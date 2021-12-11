@@ -18,11 +18,11 @@ const PORT = process.env.PORT || 5000;
 connectDatabase();
 
 // Lauch telegram bot
-const bot: Telegraf<Context<Update>> = new Telegraf(
+const telegramBot: Telegraf<Context<Update>> = new Telegraf(
     process.env.BOT_TOKEN as string
 );
-setUpBot(bot);
-bot.launch();
+setUpBot(telegramBot);
+telegramBot.launch();
 
 // set up rate limiter: maximum of 150 requests per minute
 const limiter = RateLimit({
@@ -50,3 +50,4 @@ app.listen(PORT, () => {
 });
 
 export default app;
+export { telegramBot };
