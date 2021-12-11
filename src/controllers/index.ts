@@ -6,6 +6,9 @@ import ErrorResponse from "../utils/ErrorResponse";
 import UserModel from "../models/user";
 import JWT, { TokenExpiredError, JsonWebTokenError } from "jsonwebtoken";
 import { UserModelType } from "../types/user";
+import { sendMsgForUser } from "./teleBot";
+import { telegramBot } from "../main";
+import Templates from "../utils/tele-bot/Templates";
 
 async function registerUser(
     req: ValidationResultRequest,
@@ -79,6 +82,12 @@ async function registerUser(
             success: true,
             message: "Registration successful!",
         });
+        // Confirm msg
+        sendMsgForUser(
+            telegramBot,
+            userId,
+            Templates.registrationCompleted(regForm.username)
+        );
     } catch (err) {
         return next(err);
     }
@@ -170,6 +179,16 @@ async function updateUser(
             success: true,
             message: "User data updation successful!",
         });
+        // Confirm msg
+        sendMsgForUser(
+            telegramBot,
+            userId,
+            Templates.tokenUpdationCompleted(
+                updateUserForm?.username
+                    ? updateUserForm.username
+                    : prevUsername
+            )
+        );
     } catch (err) {
         return next(err);
     }

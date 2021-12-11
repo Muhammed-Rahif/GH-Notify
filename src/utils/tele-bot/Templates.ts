@@ -35,6 +35,12 @@ class Templates {
 
     static tokenInvalid = (fullName: string): string =>
         `Hello <b>${fullName} 👋</b>,\nIt seems like <b>your github access token is expired or invalid 😐!</b> \n\n<b>PLEASE UPDATE YOUR VALID GITHUB ACCESS TOKEN SOON BY SENDING /update_access_token!</b>`;
+
+    static registrationCompleted = (fullName: string): string =>
+        `Hello <b>${fullName} 👋</b>,\n\n<b>CONGRATULATIONS 🎉!</b>\nYou are successfully completed the registration! Now will get github notification through me 🥳! `;
+
+    static tokenUpdationCompleted = (fullName: string): string =>
+        `Hello <b>${fullName} 👋</b>,\n\n<b>CONGRATULATIONS 🎉!</b>\nYou are successfully updated your github access token 🥳! `;
 }
 
 export default Templates;
