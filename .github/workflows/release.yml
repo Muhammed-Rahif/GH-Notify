@@ -21,7 +21,7 @@ jobs:
               uses: TriPSs/conventional-changelog-action@v3
               with:
                   github-token: ${{ secrets.WORKFLOW_ACCESS }}
-                  skip-on-empty: 'false'
+                  skip-on-empty: "false"
 
             - name: Create release
               uses: actions/create-release@v1
