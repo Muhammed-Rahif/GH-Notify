@@ -16,7 +16,6 @@ jobs:
             - name: Format code
               id: check
               run: yarn install && yarn format-code
-            #   continue-on-error: true
 
             - name: Create PR
               #   if: steps.check.outcome != 'success'
@@ -32,4 +31,4 @@ jobs:
                   labels: code-format
                   reviewers: Muhammed-Rahif
                   assignees: Muhammed-Rahif
-                  milestone: 1
+                  # milestone: 1
