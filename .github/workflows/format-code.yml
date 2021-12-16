@@ -29,6 +29,6 @@ jobs:
                   title: "Code Prettified"
                   body: "Code files formatted using prettier"
                   labels: code-format
-                  reviewers: Muhammed-Rahif
                   assignees: Muhammed-Rahif
+                  # reviewers: Muhammed-Rahif
                   # milestone: 1
