@@ -11,4 +11,5 @@ ReactDOM.render(
     document.getElementById("root")
 );
 
+// service worker registration
 serviceWorkerRegistration.register();
