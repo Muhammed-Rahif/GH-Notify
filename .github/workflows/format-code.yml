@@ -27,8 +27,8 @@ jobs:
                   delete-branch: true
                   title: "Prettified code"
                   body: |
-                    ### Code files formatted using prettier style
-                    - related workflow file : [.github/workflows/format-code.yml](https://github.com/Muhammed-Rahif/GH-Notify/blob/main/.github/workflows/format-code.yml)
-                    - prettier config file : [.prettierrc.json](https://github.com/Muhammed-Rahif/GH-Notify/blob/main/.prettierrc.json)
+                      ### Code files formatted using prettier style
+                      - related workflow file : [.github/workflows/format-code.yml](https://github.com/Muhammed-Rahif/GH-Notify/blob/main/.github/workflows/format-code.yml)
+                      - prettier config file : [.prettierrc.json](https://github.com/Muhammed-Rahif/GH-Notify/blob/main/.prettierrc.json)
                   labels: code-styling
                   assignees: Muhammed-Rahif
