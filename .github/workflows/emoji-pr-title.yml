@@ -1,5 +1,5 @@
 name: Add emoji to PR title
-on: 
+on:
     pull_request:
         types:
             - opened
