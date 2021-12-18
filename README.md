@@ -37,7 +37,6 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## 📝 Table of Contents
 
-- [🔗 Quick links](#-quick-links)
 - [🧐 About](#-about)
 - [🏁 Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
@@ -52,9 +51,10 @@
 <!-- prettier-ignore-end -->
 
 ## 🔗 Quick links
-- [**Get started**](https://beomax1.herokuapp.com/)
-- [**Telegram bot ( _@Beomax_bot_ )**](https://t.me/Beomax_bot)
-- [**GitHub pages**](http://rahif.me/GH-Notify/)
+
+-   [**Get started**](https://beomax1.herokuapp.com/)
+-   [**Telegram bot ( _@Beomax_bot_ )**](https://t.me/Beomax_bot)
+-   [**GitHub pages**](http://rahif.me/GH-Notify/)
 
 ## 🧐 About
 
