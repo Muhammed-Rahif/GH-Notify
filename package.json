@@ -1,7 +1,7 @@
 {
     "name": "GH-Notify",
     "description": "",
-    "version": "1.1.0",
+    "version": "1.0.1",
     "main": "dist/main",
     "typings": "dist/main",
     "scripts": {
