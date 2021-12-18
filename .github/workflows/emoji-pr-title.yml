@@ -1,9 +1,13 @@
-name: Add Emoji
-on: pull_request
+name: Add emoji to PR title
+on:
+    pull_request:
+        types:
+            - opened
+            - edited
 
 jobs:
     add-emoji:
-        name: Emoji commit
+        name: Add emoji title
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
