@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://github.com/Muhammed-Rahif/GH-Notify" rel="noopener">
+  <a href="https://beomax1.herokuapp.com" rel="noopener">
  <img width=200px height=200px src="assets/logo/logo.png" alt="GH-Notify Logo"></a>
 </p>
 
-<h3 align="center">GH-Notify</h3>
+<h3 align="center"><a href="https://beomax1.herokuapp.com/">GH-Notify</a></h3>
 
 <div align="center">
   <img src="https://img.shields.io/badge/status-active-success.svg" alt="Status">
@@ -49,6 +49,11 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <!-- prettier-ignore-end -->
+
+## 🔗 Quick links
+- [**Get started**](https://beomax1.herokuapp.com/)
+- [**Telegram bot ( _@Beomax_bot_ )**](https://t.me/Beomax_bot)
+- [**GitHub pages**](http://rahif.me/GH-Notify/)
 
 ## 🧐 About
 
