@@ -89,7 +89,9 @@ And start the local server
      yarn start
     ```
 
-Go to http://localhost:5000 ( By default ) to view the output.
+Go to http://localhost:5000 (By default) to view the output.
+
+***Note : The client section (React) files lives in [`src/client`](https://github.com/Muhammed-Rahif/GH-Notify/tree/main/src/client)** folder!*
 
 ## 🔧 Running the tests
 
