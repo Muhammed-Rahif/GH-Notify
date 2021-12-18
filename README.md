@@ -37,6 +37,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## 📝 Table of Contents
 
+- [🔗 Quick links](#-quick-links)
 - [🧐 About](#-about)
 - [🏁 Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
