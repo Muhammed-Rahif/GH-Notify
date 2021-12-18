@@ -18,17 +18,17 @@ jobs:
               run: yarn install && yarn format-code
 
             - name: Create PR
-              #   if: steps.check.outcome != 'success'
               id: cpr
               uses: peter-evans/create-pull-request@v3
               with:
                   token: ${{ secrets.WORKFLOW_ACCESS }}
-                  commit-message: "Prettified Code!"
+                  commit-message: "chore: code files prettified"
                   branch: format-code
                   delete-branch: true
-                  title: "Code Prettified"
-                  body: "Code files formatted using prettier"
-                  labels: code-format
+                  title: "Prettified code"
+                  body: |
+                    ### Code files formatted using prettier style
+                    - related workflow file : [.github/workflows/format-code.yml](https://github.com/Muhammed-Rahif/GH-Notify/blob/main/.github/workflows/format-code.yml)
+                    - prettier config file : [.prettierrc.json](https://github.com/Muhammed-Rahif/GH-Notify/blob/main/.prettierrc.json)
+                  labels: code-styling
                   assignees: Muhammed-Rahif
-                  # reviewers: Muhammed-Rahif
-                  # milestone: 1
