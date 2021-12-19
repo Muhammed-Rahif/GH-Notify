@@ -38,7 +38,7 @@ app.use(basicMiddlwares);
 app.use("/api/v1", apiRouter);
 
 app.use(express.static(path.join(__dirname, "views")));
-app.get("/*", function (req: Request, res: Response) {
+app.get("/*", limiter, function (req: Request, res: Response) {
     res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 app.use(express.static(path.join(__dirname, "views")));
