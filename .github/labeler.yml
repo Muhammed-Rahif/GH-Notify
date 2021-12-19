@@ -5,7 +5,7 @@ documentation:
 - README.md
 
 gh-actions:
--.github/workflows/**/*
+- .github/workflows/**/*
 
 telegram-bot:
 - src/controllers/teleBot.ts
