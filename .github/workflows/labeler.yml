@@ -4,6 +4,7 @@ on:
 
 jobs:
     triage:
+        name: Triaging
         runs-on: ubuntu-latest
         steps:
             - name: Labeling
