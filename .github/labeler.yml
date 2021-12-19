@@ -1,0 +1,11 @@
+dependencies:
+- yarn.lock
+
+documentation:
+- README.md
+
+gh-actions:
+-.github/workflows/**/*
+
+telegram-bot:
+- src/controllers/teleBot.ts
