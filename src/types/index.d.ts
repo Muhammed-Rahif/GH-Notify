@@ -1,5 +1,5 @@
 type RecursivePartial<T> = {
-    [P in keyof T]?: RecursivePartial<T[P]>;
+  [P in keyof T]?: RecursivePartial<T[P]>;
 };
 
 export { RecursivePartial };

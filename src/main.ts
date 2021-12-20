@@ -19,15 +19,15 @@ connectDatabase();
 
 // Lauch telegram bot
 const telegramBot: Telegraf<Context<Update>> = new Telegraf(
-    process.env.BOT_TOKEN as string
+  process.env.BOT_TOKEN as string
 );
 setUpBot(telegramBot);
 telegramBot.launch();
 
 // set up rate limiter: maximum of 150 requests per minute
 const limiter = RateLimit({
-    windowMs: 1 * 60 * 1000, // 1 minute
-    max: 85,
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 85,
 });
 app.use(limiter);
 
@@ -39,14 +39,14 @@ app.use("/api/v1", apiRouter);
 
 app.use(express.static(path.join(__dirname, "views")));
 app.get("/*", function (req: Request, res: Response) {
-    res.sendFile(path.join(__dirname, "views", "index.html"));
+  res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 app.use(express.static(path.join(__dirname, "views")));
 
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-    console.log(`Server started listening on port ${PORT}`);
+  console.log(`Server started listening on port ${PORT}`);
 });
 
 export default app;

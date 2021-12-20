@@ -1,11 +1,11 @@
 interface RegistrationForm {
-    username: string;
-    personalAccessToken: string;
-    token: string;
+  username: string;
+  personalAccessToken: string;
+  token: string;
 }
 
 interface UpdateUserForm extends RegistrationForm {
-    username?: string;
+  username?: string;
 }
 
 export { RegistrationForm, UpdateUserForm };
