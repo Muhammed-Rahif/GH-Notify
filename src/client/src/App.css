@@ -1,16 +1,16 @@
 .mb-0 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .m-1 {
-    margin: 1rem;
+  margin: 1rem;
 }
 
 .error-msg {
-    font-size: 0.7rem;
-    color: crimson;
+  font-size: 0.7rem;
+  color: crimson;
 }
 
 .m-auto {
-    margin: auto;
+  margin: auto;
 }

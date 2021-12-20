@@ -1,18 +1,18 @@
 name: Add emoji to PR title
 on:
-    pull_request:
-        types:
-            - opened
-            - edited
+  pull_request:
+    types:
+      - opened
+      - edited
 
 jobs:
-    add-emoji:
-        name: Add emoji title
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v2
-            - name: Add emoji
-              uses: tiena2cva/action-emoji@v1
-              with:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  add-emoji:
+    name: Add emoji title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Add emoji
+        uses: tiena2cva/action-emoji@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -53,9 +53,9 @@
 
 ## 🔗 Quick links
 
--   [**Get started**](https://beomax1.herokuapp.com/)
--   [**Telegram bot ( _@Beomax_bot_ )**](https://t.me/Beomax_bot)
--   [**GitHub pages**](http://rahif.me/GH-Notify/)
+- [**Get started**](https://beomax1.herokuapp.com/)
+- [**Telegram bot ( _@Beomax_bot_ )**](https://t.me/Beomax_bot)
+- [**GitHub pages**](http://rahif.me/GH-Notify/)
 
 ## 🧐 About
 
@@ -87,14 +87,14 @@ yarn build
 
 And start the local server
 
--   Development
-    ```
-    yarn devStart
-    ```
--   Production
-    ```
-     yarn start
-    ```
+- Development
+  ```
+  yarn devStart
+  ```
+- Production
+  ```
+   yarn start
+  ```
 
 Go to http://localhost:5000 (By default) to view the output.
 
@@ -110,13 +110,13 @@ yarn test
 
 ### Coding style tests
 
--   To check any files need to be formatted
+- To check any files need to be formatted
 
 ```
 yarn check-format
 ```
 
--   To format all required files
+- To format all required files
 
 ```
 yarn code-format
@@ -124,19 +124,19 @@ yarn code-format
 
 ## ⛏️ Built Using
 
--   [MongoDB](https://www.mongodb.com/) - Cross-platform document-oriented database program
--   [Express](https://expressjs.com/) - Web framework for Node.js
--   [ReactJs](https://reactjs.org/) - A JavaScript library for building user interfaces
--   [NodeJs](https://nodejs.org/en/) - Node.js® is a JavaScript runtime
+- [MongoDB](https://www.mongodb.com/) - Cross-platform document-oriented database program
+- [Express](https://expressjs.com/) - Web framework for Node.js
+- [ReactJs](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [NodeJs](https://nodejs.org/en/) - Node.js® is a JavaScript runtime
 
 ## ✍️ Authors
 
--   [@Muhammed-Rahif](https://github.com/Muhammed-Rahif) - Idea & The whole job so far
+- [@Muhammed-Rahif](https://github.com/Muhammed-Rahif) - Idea & The whole job so far
 
 See also the list of [contributors](https://github.com/Muhammed-Rahif/GH-Notify/contributors) who participated in this project.
 
 ## 🎉 Acknowledgements
 
--   [@octokit/rest](https://octokit.github.io/rest.js/) - GitHub REST API client for JavaScript
--   [telegraf](https://telegraf.js.org/) - Modern Telegram Bot Framework for Node.js
--   [picocss](https://picocss.com/) - Minimal CSS Framework for semantic HTML
+- [@octokit/rest](https://octokit.github.io/rest.js/) - GitHub REST API client for JavaScript
+- [telegraf](https://telegraf.js.org/) - Modern Telegram Bot Framework for Node.js
+- [picocss](https://picocss.com/) - Minimal CSS Framework for semantic HTML
