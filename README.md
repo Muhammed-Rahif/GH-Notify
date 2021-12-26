@@ -6,7 +6,7 @@
 <h3 align="center"><a href="https://beomax1.herokuapp.com/">GH-Notify</a></h3>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/status-active-success.svg" alt="Status">
+  <img src="https://img.shields.io/badge/status-offline-critical" alt="Status">
   <a href="https://github.com/Muhammed-Rahif/GH-Notify/issues">
     <img src="https://img.shields.io/github/issues/Muhammed-Rahif/GH-Notify.svg" alt="GitHub Issues">
   </a>
