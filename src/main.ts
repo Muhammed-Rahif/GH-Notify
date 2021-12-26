@@ -9,6 +9,7 @@ import apiRouter from "./routers/api";
 import { connectDatabase } from "./config/db";
 import { setUpBot } from "./controllers/teleBot";
 import { Update } from "typegram";
+import cors, { CorsOptions } from "cors";
 
 dotenv.config({ path: "src/config/.env" });
 const app = express();
@@ -31,7 +32,13 @@ const limiter = RateLimit({
 });
 app.use(limiter);
 
+// Cors config
+var corsOptions: CorsOptions = {
+  origin: "http://beomax1.herokuapp.com",
+};
+
 // Basic Middlwares
+app.use(cors(corsOptions));
 app.use(basicMiddlwares);
 
 // API router
