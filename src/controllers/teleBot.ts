@@ -54,7 +54,7 @@ const setupRegistration = (bot: Telegraf<Context<Update>>) =>
       }
     );
 
-    const registerUrl: string = `https://beomax1.herokuapp.com/register?token=${token}`;
+    const registerUrl: string = `https://beomax.herokuapp.com/register?token=${token}`;
 
     // Creating btns for reply msg
     let buttons: InlineKeyboardMarkup = {
@@ -108,7 +108,7 @@ const setupUpdationUserData = (bot: Telegraf<Context<Update>>) =>
       }
     );
 
-    const updateFormUrl: string = `https://beomax1.herokuapp.com/update-access-token?token=${token}`;
+    const updateFormUrl: string = `https://beomax.herokuapp.com/update-access-token?token=${token}`;
 
     // Creating btns for reply msg
     let buttons: InlineKeyboardMarkup = {
