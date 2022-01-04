@@ -13,9 +13,7 @@
     "build:server": "tsc && cp -r src/views dist/views",
     "build": "yarn install:client && yarn build:client && yarn build:server",
     "format-code": "npx prettier --write .",
-    "check-format": "npx prettier --check .",
-    "start:vercel": "vercel dev",
-    "deploy:vercel": "vercel deploy --prod"
+    "check-format": "npx prettier --check ."
   },
   "repository": "https://github.com/Muhammed-Rahif/GH-Notify.git",
   "author": "Muhammed Rahif <rahifpalliyalil@gmail.com>",
@@ -46,11 +44,10 @@
     "@types/node": "^17.0.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.4.1",
-    "ts-node": "^10.4.0",
-    "vercel": "^23.1.2"
+    "ts-node": "^10.4.0"
   },
   "engines": {
-    "node": "14.*",
+    "node": "16.13.*",
     "yarn": "1.22.17"
   }
 }
