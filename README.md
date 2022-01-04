@@ -3,7 +3,7 @@
  <img width=200px height=200px src="assets/logo/logo.png" alt="GH-Notify Logo"></a>
 </p>
 
-<h3 align="center"><a href="https://beomax1.herokuapp.com/">GH-Notify</a></h3>
+<h3 align="center"><a href="https://beomax.herokuapp.com/">GH-Notify</a></h3>
 
 <div align="center">
   <img src="https://img.shields.io/badge/status-offline-critical" alt="Status">
@@ -53,7 +53,7 @@
 
 ## 🔗 Quick links
 
-- [**Get started**](https://beomax1.herokuapp.com/)
+- [**Get started**](https://beomax.herokuapp.com/)
 - [**Telegram bot ( _@Beomax_bot_ )**](https://t.me/Beomax_bot)
 - [**GitHub pages**](http://rahif.me/GH-Notify/)
 
@@ -61,7 +61,7 @@
 
 A github notification sending server, on telegram.
 
-What if you get your github notifications on telegram instantly. Are you looking for something just like this. Then I will definitely help you. Register your github personal access token with us.. So I can remind you when your notifications comes... Let's get started from [here](https://beomax1.herokuapp.com/)! **It's completely free!**
+What if you get your github notifications on telegram instantly. Are you looking for something just like this. Then I will definitely help you. Register your github personal access token with us.. So I can remind you when your notifications comes... Let's get started from [here](https://beomax.herokuapp.com/)! **It's completely free!**
 
 ## 🏁 Getting Started
 

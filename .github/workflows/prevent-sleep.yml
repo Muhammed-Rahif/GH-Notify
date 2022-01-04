@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send a get request to server
-        run: curl -X GET https://beomax1.herokuapp.com/api/v1/stars
+        run: curl -X GET https://beomax.herokuapp.com/api/v1/stars
