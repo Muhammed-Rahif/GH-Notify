@@ -46,7 +46,7 @@
   - [Coding style tests](#coding-style-tests)
 - [⛏️ Built Using](#-built-using)
 - [✍️ Authors](#-authors)
-- [🎉 Acknowledgements](#-acknowledgements)
+- [🎉 Acknowledgments](#-acknowledgments)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <!-- prettier-ignore-end -->
