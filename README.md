@@ -38,6 +38,7 @@
 ## 📝 Table of Contents
 
 - [🔗 Quick links](#-quick-links)
+- [📸 Screenshots](#-screenshots)
 - [🧐 About](#-about)
 - [🏁 Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
