@@ -57,6 +57,12 @@
 - [**Telegram bot ( _@Beomax_bot_ )**](https://t.me/Beomax_bot)
 - [**GitHub pages**](http://rahif.me/GH-Notify/)
 
+
+## 📸 Screenshots
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/73386156/149611950-a2bc0fae-7afe-4990-81fc-98e2d2cde246.png" alt="Shot" />
+</div>
+  
 ## 🧐 About
 
 A github notification sending server, on telegram.
